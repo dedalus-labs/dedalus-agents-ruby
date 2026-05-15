@@ -1,0 +1,73 @@
+module DedalusSDK
+  module Models
+    module Chat
+      type choice_delta_tool_call =
+        {
+          index: Integer,
+          id: String,
+          function: DedalusSDK::Chat::ChoiceDeltaToolCall::Function,
+          type: DedalusSDK::Models::Chat::ChoiceDeltaToolCall::type_
+        }
+
+      class ChoiceDeltaToolCall < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor index: Integer
+
+        attr_reader id: String?
+
+        def id=: (String) -> String
+
+        attr_reader function: DedalusSDK::Chat::ChoiceDeltaToolCall::Function?
+
+        def function=: (
+          DedalusSDK::Chat::ChoiceDeltaToolCall::Function
+        ) -> DedalusSDK::Chat::ChoiceDeltaToolCall::Function
+
+        attr_reader type: DedalusSDK::Models::Chat::ChoiceDeltaToolCall::type_?
+
+        def type=: (
+          DedalusSDK::Models::Chat::ChoiceDeltaToolCall::type_
+        ) -> DedalusSDK::Models::Chat::ChoiceDeltaToolCall::type_
+
+        def initialize: (
+          index: Integer,
+          ?id: String,
+          ?function: DedalusSDK::Chat::ChoiceDeltaToolCall::Function,
+          ?type: DedalusSDK::Models::Chat::ChoiceDeltaToolCall::type_
+        ) -> void
+
+        def to_hash: -> {
+          index: Integer,
+          id: String,
+          function: DedalusSDK::Chat::ChoiceDeltaToolCall::Function,
+          type: DedalusSDK::Models::Chat::ChoiceDeltaToolCall::type_
+        }
+
+        type function = { arguments: String, name: String }
+
+        class Function < DedalusSDK::Internal::Type::BaseModel
+          attr_reader arguments: String?
+
+          def arguments=: (String) -> String
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          def initialize: (?arguments: String, ?name: String) -> void
+
+          def to_hash: -> { arguments: String, name: String }
+        end
+
+        type type_ = :function
+
+        module Type
+          extend DedalusSDK::Internal::Type::Enum
+
+          FUNCTION: :function
+
+          def self?.values: -> ::Array[DedalusSDK::Models::Chat::ChoiceDeltaToolCall::type_]
+        end
+      end
+    end
+  end
+end

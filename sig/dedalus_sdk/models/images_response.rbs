@@ -1,0 +1,19 @@
+module DedalusSDK
+  module Models
+    type images_response =
+      { created: Integer, data: ::Array[DedalusSDK::Image] }
+
+    class ImagesResponse < DedalusSDK::Internal::Type::BaseModel
+      attr_accessor created: Integer
+
+      attr_accessor data: ::Array[DedalusSDK::Image]
+
+      def initialize: (
+        created: Integer,
+        data: ::Array[DedalusSDK::Image]
+      ) -> void
+
+      def to_hash: -> { created: Integer, data: ::Array[DedalusSDK::Image] }
+    end
+  end
+end

@@ -1,0 +1,20 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionContentPartRefusalParam = Chat::ChatCompletionContentPartRefusalParam
+
+    module Chat
+      type chat_completion_content_part_refusal_param =
+        { refusal: String, type: :refusal }
+
+      class ChatCompletionContentPartRefusalParam < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor refusal: String
+
+        attr_accessor type: :refusal
+
+        def initialize: (refusal: String, ?type: :refusal) -> void
+
+        def to_hash: -> { refusal: String, type: :refusal }
+      end
+    end
+  end
+end

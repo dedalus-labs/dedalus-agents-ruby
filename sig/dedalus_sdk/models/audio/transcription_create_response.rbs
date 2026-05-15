@@ -1,0 +1,284 @@
+module DedalusSDK
+  module Models
+    module Audio
+      type transcription_create_response =
+        DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON
+        | DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON
+
+      module TranscriptionCreateResponse
+        extend DedalusSDK::Internal::Type::Union
+
+        type create_transcription_response_verbose_json =
+          {
+            duration: Float,
+            language: String,
+            text: String,
+            segments: ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Segment],
+            usage: DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Usage,
+            words: ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Word]
+          }
+
+        class CreateTranscriptionResponseVerboseJSON < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor duration: Float
+
+          attr_accessor language: String
+
+          attr_accessor text: String
+
+          attr_reader segments: ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Segment]?
+
+          def segments=: (
+            ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Segment]
+          ) -> ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Segment]
+
+          attr_reader usage: DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Usage?
+
+          def usage=: (
+            DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Usage
+          ) -> DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Usage
+
+          attr_reader words: ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Word]?
+
+          def words=: (
+            ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Word]
+          ) -> ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Word]
+
+          def initialize: (
+            duration: Float,
+            language: String,
+            text: String,
+            ?segments: ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Segment],
+            ?usage: DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Usage,
+            ?words: ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Word]
+          ) -> void
+
+          def to_hash: -> {
+            duration: Float,
+            language: String,
+            text: String,
+            segments: ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Segment],
+            usage: DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Usage,
+            words: ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseVerboseJSON::Word]
+          }
+
+          type segment =
+            {
+              id: Integer,
+              avg_logprob: Float,
+              compression_ratio: Float,
+              end_: Float,
+              no_speech_prob: Float,
+              seek: Integer,
+              start: Float,
+              temperature: Float,
+              text: String,
+              tokens: ::Array[Integer]
+            }
+
+          class Segment < DedalusSDK::Internal::Type::BaseModel
+            attr_accessor id: Integer
+
+            attr_accessor avg_logprob: Float
+
+            attr_accessor compression_ratio: Float
+
+            attr_accessor end_: Float
+
+            attr_accessor no_speech_prob: Float
+
+            attr_accessor seek: Integer
+
+            attr_accessor start: Float
+
+            attr_accessor temperature: Float
+
+            attr_accessor text: String
+
+            attr_accessor tokens: ::Array[Integer]
+
+            def initialize: (
+              id: Integer,
+              avg_logprob: Float,
+              compression_ratio: Float,
+              end_: Float,
+              no_speech_prob: Float,
+              seek: Integer,
+              start: Float,
+              temperature: Float,
+              text: String,
+              tokens: ::Array[Integer]
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              avg_logprob: Float,
+              compression_ratio: Float,
+              end_: Float,
+              no_speech_prob: Float,
+              seek: Integer,
+              start: Float,
+              temperature: Float,
+              text: String,
+              tokens: ::Array[Integer]
+            }
+          end
+
+          type usage = { seconds: Float, type: :duration }
+
+          class Usage < DedalusSDK::Internal::Type::BaseModel
+            attr_accessor seconds: Float
+
+            attr_accessor type: :duration
+
+            def initialize: (seconds: Float, ?type: :duration) -> void
+
+            def to_hash: -> { seconds: Float, type: :duration }
+          end
+
+          type word = { end_: Float, start: Float, word: String }
+
+          class Word < DedalusSDK::Internal::Type::BaseModel
+            attr_accessor end_: Float
+
+            attr_accessor start: Float
+
+            attr_accessor word: String
+
+            def initialize: (end_: Float, start: Float, word: String) -> void
+
+            def to_hash: -> { end_: Float, start: Float, word: String }
+          end
+        end
+
+        type create_transcription_response_json =
+          {
+            text: String,
+            logprobs: ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::Logprob],
+            usage: DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::usage
+          }
+
+        class CreateTranscriptionResponseJSON < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor text: String
+
+          attr_reader logprobs: ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::Logprob]?
+
+          def logprobs=: (
+            ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::Logprob]
+          ) -> ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::Logprob]
+
+          attr_reader usage: DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::usage?
+
+          def usage=: (
+            DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::usage
+          ) -> DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::usage
+
+          def initialize: (
+            text: String,
+            ?logprobs: ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::Logprob],
+            ?usage: DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::usage
+          ) -> void
+
+          def to_hash: -> {
+            text: String,
+            logprobs: ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::Logprob],
+            usage: DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::usage
+          }
+
+          type logprob =
+            { token: String, bytes: ::Array[Float], logprob: Float }
+
+          class Logprob < DedalusSDK::Internal::Type::BaseModel
+            attr_reader token: String?
+
+            def token=: (String) -> String
+
+            attr_reader bytes: ::Array[Float]?
+
+            def bytes=: (::Array[Float]) -> ::Array[Float]
+
+            attr_reader logprob: Float?
+
+            def logprob=: (Float) -> Float
+
+            def initialize: (
+              ?token: String,
+              ?bytes: ::Array[Float],
+              ?logprob: Float
+            ) -> void
+
+            def to_hash: -> {
+              token: String,
+              bytes: ::Array[Float],
+              logprob: Float
+            }
+          end
+
+          type usage =
+            DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::Usage::Tokens
+            | DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::Usage::Duration
+
+          module Usage
+            extend DedalusSDK::Internal::Type::Union
+
+            type tokens =
+              {
+                input_tokens: Integer,
+                output_tokens: Integer,
+                total_tokens: Integer,
+                type: :tokens,
+                input_token_details: DedalusSDK::Chat::InputTokenDetails
+              }
+
+            class Tokens < DedalusSDK::Internal::Type::BaseModel
+              attr_accessor input_tokens: Integer
+
+              attr_accessor output_tokens: Integer
+
+              attr_accessor total_tokens: Integer
+
+              attr_accessor type: :tokens
+
+              attr_reader input_token_details: DedalusSDK::Chat::InputTokenDetails?
+
+              def input_token_details=: (
+                DedalusSDK::Chat::InputTokenDetails
+              ) -> DedalusSDK::Chat::InputTokenDetails
+
+              def initialize: (
+                input_tokens: Integer,
+                output_tokens: Integer,
+                total_tokens: Integer,
+                ?input_token_details: DedalusSDK::Chat::InputTokenDetails,
+                ?type: :tokens
+              ) -> void
+
+              def to_hash: -> {
+                input_tokens: Integer,
+                output_tokens: Integer,
+                total_tokens: Integer,
+                type: :tokens,
+                input_token_details: DedalusSDK::Chat::InputTokenDetails
+              }
+            end
+
+            type duration = { seconds: Float, type: :duration }
+
+            class Duration < DedalusSDK::Internal::Type::BaseModel
+              attr_accessor seconds: Float
+
+              attr_accessor type: :duration
+
+              def initialize: (seconds: Float, ?type: :duration) -> void
+
+              def to_hash: -> { seconds: Float, type: :duration }
+            end
+
+            def self?.variants: -> ::Array[DedalusSDK::Models::Audio::TranscriptionCreateResponse::CreateTranscriptionResponseJSON::usage]
+          end
+        end
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::Audio::transcription_create_response]
+      end
+    end
+  end
+end

@@ -1,0 +1,16 @@
+module DedalusSDK
+  module Resources
+    class Embeddings
+      def create: (
+        input: DedalusSDK::Models::CreateEmbeddingRequest::input,
+        model: DedalusSDK::Models::CreateEmbeddingRequest::model,
+        ?dimensions: Integer,
+        ?encoding_format: DedalusSDK::Models::CreateEmbeddingRequest::encoding_format,
+        ?user: String,
+        ?request_options: DedalusSDK::request_opts
+      ) -> DedalusSDK::CreateEmbeddingResponse
+
+      def initialize: (client: DedalusSDK::Client) -> void
+    end
+  end
+end

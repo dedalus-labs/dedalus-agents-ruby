@@ -1,0 +1,51 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionMessageToolCall = Chat::ChatCompletionMessageToolCall
+
+    module Chat
+      type chat_completion_message_tool_call =
+        {
+          id: String,
+          function: DedalusSDK::Chat::ChatCompletionMessageToolCall::Function,
+          type: :function,
+          thought_signature: String?
+        }
+
+      class ChatCompletionMessageToolCall < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor function: DedalusSDK::Chat::ChatCompletionMessageToolCall::Function
+
+        attr_accessor type: :function
+
+        attr_accessor thought_signature: String?
+
+        def initialize: (
+          id: String,
+          function: DedalusSDK::Chat::ChatCompletionMessageToolCall::Function,
+          ?thought_signature: String?,
+          ?type: :function
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          function: DedalusSDK::Chat::ChatCompletionMessageToolCall::Function,
+          type: :function,
+          thought_signature: String?
+        }
+
+        type function = { arguments: String, name: String }
+
+        class Function < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor arguments: String
+
+          attr_accessor name: String
+
+          def initialize: (arguments: String, name: String) -> void
+
+          def to_hash: -> { arguments: String, name: String }
+        end
+      end
+    end
+  end
+end

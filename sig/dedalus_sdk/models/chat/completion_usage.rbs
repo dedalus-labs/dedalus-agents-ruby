@@ -1,0 +1,50 @@
+module DedalusSDK
+  module Models
+    module Chat
+      type completion_usage =
+        {
+          completion_tokens: Integer,
+          prompt_tokens: Integer,
+          total_tokens: Integer,
+          completion_tokens_details: DedalusSDK::Chat::CompletionTokensDetails,
+          prompt_tokens_details: DedalusSDK::Chat::PromptTokensDetails
+        }
+
+      class CompletionUsage < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor completion_tokens: Integer
+
+        attr_accessor prompt_tokens: Integer
+
+        attr_accessor total_tokens: Integer
+
+        attr_reader completion_tokens_details: DedalusSDK::Chat::CompletionTokensDetails?
+
+        def completion_tokens_details=: (
+          DedalusSDK::Chat::CompletionTokensDetails
+        ) -> DedalusSDK::Chat::CompletionTokensDetails
+
+        attr_reader prompt_tokens_details: DedalusSDK::Chat::PromptTokensDetails?
+
+        def prompt_tokens_details=: (
+          DedalusSDK::Chat::PromptTokensDetails
+        ) -> DedalusSDK::Chat::PromptTokensDetails
+
+        def initialize: (
+          completion_tokens: Integer,
+          prompt_tokens: Integer,
+          total_tokens: Integer,
+          ?completion_tokens_details: DedalusSDK::Chat::CompletionTokensDetails,
+          ?prompt_tokens_details: DedalusSDK::Chat::PromptTokensDetails
+        ) -> void
+
+        def to_hash: -> {
+          completion_tokens: Integer,
+          prompt_tokens: Integer,
+          total_tokens: Integer,
+          completion_tokens_details: DedalusSDK::Chat::CompletionTokensDetails,
+          prompt_tokens_details: DedalusSDK::Chat::PromptTokensDetails
+        }
+      end
+    end
+  end
+end

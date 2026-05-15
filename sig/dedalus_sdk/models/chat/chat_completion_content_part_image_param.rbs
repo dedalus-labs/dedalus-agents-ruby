@@ -1,0 +1,67 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionContentPartImageParam = Chat::ChatCompletionContentPartImageParam
+
+    module Chat
+      type chat_completion_content_part_image_param =
+        {
+          image_url: DedalusSDK::Chat::ChatCompletionContentPartImageParam::ImageURL,
+          type: :image_url
+        }
+
+      class ChatCompletionContentPartImageParam < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor image_url: DedalusSDK::Chat::ChatCompletionContentPartImageParam::ImageURL
+
+        attr_accessor type: :image_url
+
+        def initialize: (
+          image_url: DedalusSDK::Chat::ChatCompletionContentPartImageParam::ImageURL,
+          ?type: :image_url
+        ) -> void
+
+        def to_hash: -> {
+          image_url: DedalusSDK::Chat::ChatCompletionContentPartImageParam::ImageURL,
+          type: :image_url
+        }
+
+        type image_url =
+          {
+            url: String,
+            detail: DedalusSDK::Models::Chat::ChatCompletionContentPartImageParam::ImageURL::detail
+          }
+
+        class ImageURL < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor url: String
+
+          attr_reader detail: DedalusSDK::Models::Chat::ChatCompletionContentPartImageParam::ImageURL::detail?
+
+          def detail=: (
+            DedalusSDK::Models::Chat::ChatCompletionContentPartImageParam::ImageURL::detail
+          ) -> DedalusSDK::Models::Chat::ChatCompletionContentPartImageParam::ImageURL::detail
+
+          def initialize: (
+            url: String,
+            ?detail: DedalusSDK::Models::Chat::ChatCompletionContentPartImageParam::ImageURL::detail
+          ) -> void
+
+          def to_hash: -> {
+            url: String,
+            detail: DedalusSDK::Models::Chat::ChatCompletionContentPartImageParam::ImageURL::detail
+          }
+
+          type detail = :auto | :low | :high
+
+          module Detail
+            extend DedalusSDK::Internal::Type::Enum
+
+            AUTO: :auto
+            LOW: :low
+            HIGH: :high
+
+            def self?.values: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionContentPartImageParam::ImageURL::detail]
+          end
+        end
+      end
+    end
+  end
+end

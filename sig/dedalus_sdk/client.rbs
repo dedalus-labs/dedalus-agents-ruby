@@ -1,0 +1,67 @@
+module DedalusSDK
+  class Client < DedalusSDK::Internal::Transport::BaseClient
+    DEFAULT_MAX_RETRIES: 2
+
+    DEFAULT_TIMEOUT_IN_SECONDS: Float
+
+    DEFAULT_INITIAL_RETRY_DELAY: Float
+
+    DEFAULT_MAX_RETRY_DELAY: Float
+
+    ENVIRONMENTS: {
+      production: "https://api.dedaluslabs.ai",
+      development: "http://localhost:4010"
+    }
+
+    attr_reader api_key: String?
+
+    attr_reader x_api_key: String?
+
+    attr_reader as_base_url: String?
+
+    attr_reader dedalus_org_id: String?
+
+    attr_reader provider: String?
+
+    attr_reader provider_key: String?
+
+    attr_reader provider_model: String?
+
+    attr_reader models: DedalusSDK::Resources::Models
+
+    attr_reader embeddings: DedalusSDK::Resources::Embeddings
+
+    attr_reader audio: DedalusSDK::Resources::Audio
+
+    attr_reader images: DedalusSDK::Resources::Images
+
+    attr_reader ocr: DedalusSDK::Resources::OCR
+
+    attr_reader responses: DedalusSDK::Resources::Responses
+
+    attr_reader chat: DedalusSDK::Resources::Chat
+
+    private def auth_headers: -> ::Hash[String, String]
+
+    private def bearer: -> ::Hash[String, String]
+
+    private def api_key_auth: -> ::Hash[String, String]
+
+    def initialize: (
+      ?api_key: String?,
+      ?x_api_key: String?,
+      ?as_base_url: String?,
+      ?dedalus_org_id: String?,
+      ?provider: String?,
+      ?provider_key: String?,
+      ?provider_model: String?,
+      ?environment: :production | :development | nil,
+      ?base_url: String?,
+      ?max_retries: Integer,
+      ?timeout: Float,
+      ?initial_retry_delay: Float,
+      ?max_retry_delay: Float,
+      ?idempotency_header: String
+    ) -> void
+  end
+end

@@ -1,0 +1,526 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionCreateParams = Chat::ChatCompletionCreateParams
+
+    module Chat
+      type chat_completion_create_params =
+        {
+          model: DedalusSDK::Models::Chat::ChatCompletionCreateParams::model,
+          agent_attributes: ::Hash[Symbol, Float]?,
+          audio: DedalusSDK::Chat::ChatCompletionAudioParam?,
+          automatic_tool_execution: bool,
+          cached_content: String?,
+          correlation_id: String?,
+          credentials: DedalusSDK::Models::Chat::ChatCompletionCreateParams::credentials?,
+          deferred: bool?,
+          deferred_calls: ::Array[DedalusSDK::Chat::DeferredCallResponse]?,
+          frequency_penalty: Float?,
+          function_call: String?,
+          functions: ::Array[DedalusSDK::Chat::ChatCompletionFunctions]?,
+          generation_config: DedalusSDK::Models::json_object_input?,
+          guardrails: ::Array[::Hash[Symbol, top]]?,
+          handoff_config: ::Hash[Symbol, top]?,
+          handoff_mode: bool?,
+          inference_geo: String?,
+          logit_bias: ::Hash[Symbol, Integer]?,
+          logprobs: bool?,
+          max_completion_tokens: Integer?,
+          max_tokens: Integer?,
+          max_turns: Integer?,
+          mcp_servers: DedalusSDK::Models::Chat::ChatCompletionCreateParams::mcp_servers?,
+          messages: ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::message]?,
+          metadata: DedalusSDK::Models::json_object_input?,
+          modalities: ::Array[String]?,
+          model_attributes: ::Hash[Symbol, ::Hash[Symbol, Float]]?,
+          n: Integer?,
+          output_config: DedalusSDK::Models::json_object_input?,
+          parallel_tool_calls: bool?,
+          prediction: DedalusSDK::Chat::PredictionContent?,
+          presence_penalty: Float?,
+          prompt_cache_key: String?,
+          prompt_cache_retention: String?,
+          prompt_mode: DedalusSDK::Models::Chat::ChatCompletionCreateParams::prompt_mode?,
+          reasoning_effort: String?,
+          response_format: DedalusSDK::Models::Chat::ChatCompletionCreateParams::response_format?,
+          safe_prompt: bool?,
+          safety_identifier: String?,
+          safety_settings: ::Array[DedalusSDK::Chat::ChatCompletionCreateParams::SafetySetting]?,
+          search_parameters: DedalusSDK::Models::json_object_input?,
+          seed: Integer?,
+          service_tier: String?,
+          speed: DedalusSDK::Models::Chat::ChatCompletionCreateParams::speed?,
+          stop: DedalusSDK::Models::Chat::ChatCompletionCreateParams::stop?,
+          store: bool?,
+          stream: bool?,
+          stream_options: DedalusSDK::Models::json_object_input?,
+          system_instruction: DedalusSDK::Models::Chat::ChatCompletionCreateParams::system_instruction?,
+          temperature: Float?,
+          thinking: DedalusSDK::Models::Chat::ChatCompletionCreateParams::thinking?,
+          tool_choice: DedalusSDK::Models::Chat::ChatCompletionCreateParams::tool_choice?,
+          tool_config: DedalusSDK::Models::json_object_input?,
+          tools: ::Array[DedalusSDK::Chat::ChatCompletionToolParam]?,
+          top_k: Integer?,
+          top_logprobs: Integer?,
+          top_p: Float?,
+          user: String?,
+          verbosity: String?,
+          web_search_options: DedalusSDK::Models::json_object_input?
+        }
+
+      class ChatCompletionCreateParams < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor model: DedalusSDK::Models::Chat::ChatCompletionCreateParams::model
+
+        attr_accessor agent_attributes: ::Hash[Symbol, Float]?
+
+        attr_accessor audio: DedalusSDK::Chat::ChatCompletionAudioParam?
+
+        attr_reader automatic_tool_execution: bool?
+
+        def automatic_tool_execution=: (bool) -> bool
+
+        attr_accessor cached_content: String?
+
+        attr_accessor correlation_id: String?
+
+        attr_accessor credentials: DedalusSDK::Models::Chat::ChatCompletionCreateParams::credentials?
+
+        attr_accessor deferred: bool?
+
+        attr_accessor deferred_calls: ::Array[DedalusSDK::Chat::DeferredCallResponse]?
+
+        attr_accessor frequency_penalty: Float?
+
+        attr_accessor function_call: String?
+
+        attr_accessor functions: ::Array[DedalusSDK::Chat::ChatCompletionFunctions]?
+
+        attr_accessor generation_config: DedalusSDK::Models::json_object_input?
+
+        attr_accessor guardrails: ::Array[::Hash[Symbol, top]]?
+
+        attr_accessor handoff_config: ::Hash[Symbol, top]?
+
+        attr_accessor handoff_mode: bool?
+
+        attr_accessor inference_geo: String?
+
+        attr_accessor logit_bias: ::Hash[Symbol, Integer]?
+
+        attr_accessor logprobs: bool?
+
+        attr_accessor max_completion_tokens: Integer?
+
+        attr_accessor max_tokens: Integer?
+
+        attr_accessor max_turns: Integer?
+
+        attr_accessor mcp_servers: DedalusSDK::Models::Chat::ChatCompletionCreateParams::mcp_servers?
+
+        attr_accessor messages: ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::message]?
+
+        attr_accessor metadata: DedalusSDK::Models::json_object_input?
+
+        attr_accessor modalities: ::Array[String]?
+
+        attr_accessor model_attributes: ::Hash[Symbol, ::Hash[Symbol, Float]]?
+
+        attr_accessor n: Integer?
+
+        attr_accessor output_config: DedalusSDK::Models::json_object_input?
+
+        attr_accessor parallel_tool_calls: bool?
+
+        attr_accessor prediction: DedalusSDK::Chat::PredictionContent?
+
+        attr_accessor presence_penalty: Float?
+
+        attr_accessor prompt_cache_key: String?
+
+        attr_accessor prompt_cache_retention: String?
+
+        attr_accessor prompt_mode: DedalusSDK::Models::Chat::ChatCompletionCreateParams::prompt_mode?
+
+        attr_accessor reasoning_effort: String?
+
+        attr_accessor response_format: DedalusSDK::Models::Chat::ChatCompletionCreateParams::response_format?
+
+        attr_accessor safe_prompt: bool?
+
+        attr_accessor safety_identifier: String?
+
+        attr_accessor safety_settings: ::Array[DedalusSDK::Chat::ChatCompletionCreateParams::SafetySetting]?
+
+        attr_accessor search_parameters: DedalusSDK::Models::json_object_input?
+
+        attr_accessor seed: Integer?
+
+        attr_accessor service_tier: String?
+
+        attr_accessor speed: DedalusSDK::Models::Chat::ChatCompletionCreateParams::speed?
+
+        attr_accessor stop: DedalusSDK::Models::Chat::ChatCompletionCreateParams::stop?
+
+        attr_accessor store: bool?
+
+        attr_accessor stream: bool?
+
+        attr_accessor stream_options: DedalusSDK::Models::json_object_input?
+
+        attr_accessor system_instruction: DedalusSDK::Models::Chat::ChatCompletionCreateParams::system_instruction?
+
+        attr_accessor temperature: Float?
+
+        attr_accessor thinking: DedalusSDK::Models::Chat::ChatCompletionCreateParams::thinking?
+
+        attr_accessor tool_choice: DedalusSDK::Models::Chat::ChatCompletionCreateParams::tool_choice?
+
+        attr_accessor tool_config: DedalusSDK::Models::json_object_input?
+
+        attr_accessor tools: ::Array[DedalusSDK::Chat::ChatCompletionToolParam]?
+
+        attr_accessor top_k: Integer?
+
+        attr_accessor top_logprobs: Integer?
+
+        attr_accessor top_p: Float?
+
+        attr_accessor user: String?
+
+        attr_accessor verbosity: String?
+
+        attr_accessor web_search_options: DedalusSDK::Models::json_object_input?
+
+        def initialize: (
+          model: DedalusSDK::Models::Chat::ChatCompletionCreateParams::model,
+          ?agent_attributes: ::Hash[Symbol, Float]?,
+          ?audio: DedalusSDK::Chat::ChatCompletionAudioParam?,
+          ?automatic_tool_execution: bool,
+          ?cached_content: String?,
+          ?correlation_id: String?,
+          ?credentials: DedalusSDK::Models::Chat::ChatCompletionCreateParams::credentials?,
+          ?deferred: bool?,
+          ?deferred_calls: ::Array[DedalusSDK::Chat::DeferredCallResponse]?,
+          ?frequency_penalty: Float?,
+          ?function_call: String?,
+          ?functions: ::Array[DedalusSDK::Chat::ChatCompletionFunctions]?,
+          ?generation_config: DedalusSDK::Models::json_object_input?,
+          ?guardrails: ::Array[::Hash[Symbol, top]]?,
+          ?handoff_config: ::Hash[Symbol, top]?,
+          ?handoff_mode: bool?,
+          ?inference_geo: String?,
+          ?logit_bias: ::Hash[Symbol, Integer]?,
+          ?logprobs: bool?,
+          ?max_completion_tokens: Integer?,
+          ?max_tokens: Integer?,
+          ?max_turns: Integer?,
+          ?mcp_servers: DedalusSDK::Models::Chat::ChatCompletionCreateParams::mcp_servers?,
+          ?messages: ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::message]?,
+          ?metadata: DedalusSDK::Models::json_object_input?,
+          ?modalities: ::Array[String]?,
+          ?model_attributes: ::Hash[Symbol, ::Hash[Symbol, Float]]?,
+          ?n: Integer?,
+          ?output_config: DedalusSDK::Models::json_object_input?,
+          ?parallel_tool_calls: bool?,
+          ?prediction: DedalusSDK::Chat::PredictionContent?,
+          ?presence_penalty: Float?,
+          ?prompt_cache_key: String?,
+          ?prompt_cache_retention: String?,
+          ?prompt_mode: DedalusSDK::Models::Chat::ChatCompletionCreateParams::prompt_mode?,
+          ?reasoning_effort: String?,
+          ?response_format: DedalusSDK::Models::Chat::ChatCompletionCreateParams::response_format?,
+          ?safe_prompt: bool?,
+          ?safety_identifier: String?,
+          ?safety_settings: ::Array[DedalusSDK::Chat::ChatCompletionCreateParams::SafetySetting]?,
+          ?search_parameters: DedalusSDK::Models::json_object_input?,
+          ?seed: Integer?,
+          ?service_tier: String?,
+          ?speed: DedalusSDK::Models::Chat::ChatCompletionCreateParams::speed?,
+          ?stop: DedalusSDK::Models::Chat::ChatCompletionCreateParams::stop?,
+          ?store: bool?,
+          ?stream: bool?,
+          ?stream_options: DedalusSDK::Models::json_object_input?,
+          ?system_instruction: DedalusSDK::Models::Chat::ChatCompletionCreateParams::system_instruction?,
+          ?temperature: Float?,
+          ?thinking: DedalusSDK::Models::Chat::ChatCompletionCreateParams::thinking?,
+          ?tool_choice: DedalusSDK::Models::Chat::ChatCompletionCreateParams::tool_choice?,
+          ?tool_config: DedalusSDK::Models::json_object_input?,
+          ?tools: ::Array[DedalusSDK::Chat::ChatCompletionToolParam]?,
+          ?top_k: Integer?,
+          ?top_logprobs: Integer?,
+          ?top_p: Float?,
+          ?user: String?,
+          ?verbosity: String?,
+          ?web_search_options: DedalusSDK::Models::json_object_input?
+        ) -> void
+
+        def to_hash: -> {
+          model: DedalusSDK::Models::Chat::ChatCompletionCreateParams::model,
+          agent_attributes: ::Hash[Symbol, Float]?,
+          audio: DedalusSDK::Chat::ChatCompletionAudioParam?,
+          automatic_tool_execution: bool,
+          cached_content: String?,
+          correlation_id: String?,
+          credentials: DedalusSDK::Models::Chat::ChatCompletionCreateParams::credentials?,
+          deferred: bool?,
+          deferred_calls: ::Array[DedalusSDK::Chat::DeferredCallResponse]?,
+          frequency_penalty: Float?,
+          function_call: String?,
+          functions: ::Array[DedalusSDK::Chat::ChatCompletionFunctions]?,
+          generation_config: DedalusSDK::Models::json_object_input?,
+          guardrails: ::Array[::Hash[Symbol, top]]?,
+          handoff_config: ::Hash[Symbol, top]?,
+          handoff_mode: bool?,
+          inference_geo: String?,
+          logit_bias: ::Hash[Symbol, Integer]?,
+          logprobs: bool?,
+          max_completion_tokens: Integer?,
+          max_tokens: Integer?,
+          max_turns: Integer?,
+          mcp_servers: DedalusSDK::Models::Chat::ChatCompletionCreateParams::mcp_servers?,
+          messages: ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::message]?,
+          metadata: DedalusSDK::Models::json_object_input?,
+          modalities: ::Array[String]?,
+          model_attributes: ::Hash[Symbol, ::Hash[Symbol, Float]]?,
+          n: Integer?,
+          output_config: DedalusSDK::Models::json_object_input?,
+          parallel_tool_calls: bool?,
+          prediction: DedalusSDK::Chat::PredictionContent?,
+          presence_penalty: Float?,
+          prompt_cache_key: String?,
+          prompt_cache_retention: String?,
+          prompt_mode: DedalusSDK::Models::Chat::ChatCompletionCreateParams::prompt_mode?,
+          reasoning_effort: String?,
+          response_format: DedalusSDK::Models::Chat::ChatCompletionCreateParams::response_format?,
+          safe_prompt: bool?,
+          safety_identifier: String?,
+          safety_settings: ::Array[DedalusSDK::Chat::ChatCompletionCreateParams::SafetySetting]?,
+          search_parameters: DedalusSDK::Models::json_object_input?,
+          seed: Integer?,
+          service_tier: String?,
+          speed: DedalusSDK::Models::Chat::ChatCompletionCreateParams::speed?,
+          stop: DedalusSDK::Models::Chat::ChatCompletionCreateParams::stop?,
+          store: bool?,
+          stream: bool?,
+          stream_options: DedalusSDK::Models::json_object_input?,
+          system_instruction: DedalusSDK::Models::Chat::ChatCompletionCreateParams::system_instruction?,
+          temperature: Float?,
+          thinking: DedalusSDK::Models::Chat::ChatCompletionCreateParams::thinking?,
+          tool_choice: DedalusSDK::Models::Chat::ChatCompletionCreateParams::tool_choice?,
+          tool_config: DedalusSDK::Models::json_object_input?,
+          tools: ::Array[DedalusSDK::Chat::ChatCompletionToolParam]?,
+          top_k: Integer?,
+          top_logprobs: Integer?,
+          top_p: Float?,
+          user: String?,
+          verbosity: String?,
+          web_search_options: DedalusSDK::Models::json_object_input?
+        }
+
+        type model =
+          String
+          | DedalusSDK::DedalusModel
+          | ::Array[DedalusSDK::Models::dedalus_model_choice]
+
+        module Model
+          extend DedalusSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::model]
+
+          DedalusModelChoiceArray: DedalusSDK::Internal::Type::Converter
+        end
+
+        type credentials =
+          DedalusSDK::Credential | DedalusSDK::Models::mcp_credentials
+
+        module Credentials
+          extend DedalusSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::credentials]
+        end
+
+        type mcp_servers =
+          String | DedalusSDK::MCPServerSpec | DedalusSDK::Models::mcp_servers
+
+        module MCPServers
+          extend DedalusSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::mcp_servers]
+        end
+
+        type message =
+          DedalusSDK::Chat::ChatCompletionDeveloperMessageParam
+          | DedalusSDK::Chat::ChatCompletionSystemMessageParam
+          | DedalusSDK::Chat::ChatCompletionUserMessageParam
+          | DedalusSDK::Chat::ChatCompletionAssistantMessageParam
+          | DedalusSDK::Chat::ChatCompletionToolMessageParam
+          | DedalusSDK::Chat::ChatCompletionFunctionMessageParam
+
+        module Message
+          extend DedalusSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::message]
+        end
+
+        type prompt_mode = :reasoning
+
+        module PromptMode
+          extend DedalusSDK::Internal::Type::Enum
+
+          REASONING: :reasoning
+
+          def self?.values: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::prompt_mode]
+        end
+
+        type response_format =
+          DedalusSDK::ResponseFormatText
+          | DedalusSDK::ResponseFormatJSONSchema
+          | DedalusSDK::ResponseFormatJSONObject
+
+        module ResponseFormat
+          extend DedalusSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::response_format]
+        end
+
+        type safety_setting =
+          {
+            category: DedalusSDK::Models::Chat::ChatCompletionCreateParams::SafetySetting::category,
+            threshold: DedalusSDK::Models::Chat::ChatCompletionCreateParams::SafetySetting::threshold
+          }
+
+        class SafetySetting < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor category: DedalusSDK::Models::Chat::ChatCompletionCreateParams::SafetySetting::category
+
+          attr_accessor threshold: DedalusSDK::Models::Chat::ChatCompletionCreateParams::SafetySetting::threshold
+
+          def initialize: (
+            category: DedalusSDK::Models::Chat::ChatCompletionCreateParams::SafetySetting::category,
+            threshold: DedalusSDK::Models::Chat::ChatCompletionCreateParams::SafetySetting::threshold
+          ) -> void
+
+          def to_hash: -> {
+            category: DedalusSDK::Models::Chat::ChatCompletionCreateParams::SafetySetting::category,
+            threshold: DedalusSDK::Models::Chat::ChatCompletionCreateParams::SafetySetting::threshold
+          }
+
+          type category =
+            :HARM_CATEGORY_UNSPECIFIED
+            | :HARM_CATEGORY_DEROGATORY
+            | :HARM_CATEGORY_TOXICITY
+            | :HARM_CATEGORY_VIOLENCE
+            | :HARM_CATEGORY_SEXUAL
+            | :HARM_CATEGORY_MEDICAL
+            | :HARM_CATEGORY_DANGEROUS
+            | :HARM_CATEGORY_HARASSMENT
+            | :HARM_CATEGORY_HATE_SPEECH
+            | :HARM_CATEGORY_SEXUALLY_EXPLICIT
+            | :HARM_CATEGORY_DANGEROUS_CONTENT
+            | :HARM_CATEGORY_CIVIC_INTEGRITY
+
+          module Category
+            extend DedalusSDK::Internal::Type::Enum
+
+            HARM_CATEGORY_UNSPECIFIED: :HARM_CATEGORY_UNSPECIFIED
+            HARM_CATEGORY_DEROGATORY: :HARM_CATEGORY_DEROGATORY
+            HARM_CATEGORY_TOXICITY: :HARM_CATEGORY_TOXICITY
+            HARM_CATEGORY_VIOLENCE: :HARM_CATEGORY_VIOLENCE
+            HARM_CATEGORY_SEXUAL: :HARM_CATEGORY_SEXUAL
+            HARM_CATEGORY_MEDICAL: :HARM_CATEGORY_MEDICAL
+            HARM_CATEGORY_DANGEROUS: :HARM_CATEGORY_DANGEROUS
+            HARM_CATEGORY_HARASSMENT: :HARM_CATEGORY_HARASSMENT
+            HARM_CATEGORY_HATE_SPEECH: :HARM_CATEGORY_HATE_SPEECH
+            HARM_CATEGORY_SEXUALLY_EXPLICIT: :HARM_CATEGORY_SEXUALLY_EXPLICIT
+            HARM_CATEGORY_DANGEROUS_CONTENT: :HARM_CATEGORY_DANGEROUS_CONTENT
+            HARM_CATEGORY_CIVIC_INTEGRITY: :HARM_CATEGORY_CIVIC_INTEGRITY
+
+            def self?.values: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::SafetySetting::category]
+          end
+
+          type threshold =
+            :HARM_BLOCK_THRESHOLD_UNSPECIFIED
+            | :BLOCK_LOW_AND_ABOVE
+            | :BLOCK_MEDIUM_AND_ABOVE
+            | :BLOCK_ONLY_HIGH
+            | :BLOCK_NONE
+            | :OFF
+
+          module Threshold
+            extend DedalusSDK::Internal::Type::Enum
+
+            HARM_BLOCK_THRESHOLD_UNSPECIFIED: :HARM_BLOCK_THRESHOLD_UNSPECIFIED
+            BLOCK_LOW_AND_ABOVE: :BLOCK_LOW_AND_ABOVE
+            BLOCK_MEDIUM_AND_ABOVE: :BLOCK_MEDIUM_AND_ABOVE
+            BLOCK_ONLY_HIGH: :BLOCK_ONLY_HIGH
+            BLOCK_NONE: :BLOCK_NONE
+            OFF: :OFF
+
+            def self?.values: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::SafetySetting::threshold]
+          end
+        end
+
+        type speed = :standard | :fast
+
+        module Speed
+          extend DedalusSDK::Internal::Type::Enum
+
+          STANDARD: :standard
+          FAST: :fast
+
+          def self?.values: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::speed]
+        end
+
+        type stop = ::Array[String] | String
+
+        module Stop
+          extend DedalusSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::stop]
+
+          StringArray: DedalusSDK::Internal::Type::Converter
+        end
+
+        type system_instruction = DedalusSDK::Models::json_object_input | String
+
+        module SystemInstruction
+          extend DedalusSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::system_instruction]
+        end
+
+        type thinking =
+          DedalusSDK::Chat::ThinkingConfigEnabled
+          | DedalusSDK::Chat::ThinkingConfigDisabled
+          | DedalusSDK::Chat::ChatCompletionCreateParams::Thinking::Adaptive
+
+        module Thinking
+          extend DedalusSDK::Internal::Type::Union
+
+          type adaptive = { type: :adaptive }
+
+          class Adaptive < DedalusSDK::Internal::Type::BaseModel
+            attr_accessor type: :adaptive
+
+            def initialize: (?type: :adaptive) -> void
+
+            def to_hash: -> { type: :adaptive }
+          end
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::thinking]
+        end
+
+        type tool_choice =
+          String
+          | DedalusSDK::Chat::ToolChoiceAuto
+          | DedalusSDK::Chat::ToolChoiceAny
+          | DedalusSDK::Chat::ToolChoiceTool
+          | DedalusSDK::Chat::ToolChoiceNone
+
+        module ToolChoice
+          extend DedalusSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionCreateParams::tool_choice]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,47 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionSystemMessageParam = Chat::ChatCompletionSystemMessageParam
+
+    module Chat
+      type chat_completion_system_message_param =
+        {
+          content: DedalusSDK::Models::Chat::ChatCompletionSystemMessageParam::content,
+          role: :system,
+          name: String
+        }
+
+      class ChatCompletionSystemMessageParam < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor content: DedalusSDK::Models::Chat::ChatCompletionSystemMessageParam::content
+
+        attr_accessor role: :system
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        def initialize: (
+          content: DedalusSDK::Models::Chat::ChatCompletionSystemMessageParam::content,
+          ?name: String,
+          ?role: :system
+        ) -> void
+
+        def to_hash: -> {
+          content: DedalusSDK::Models::Chat::ChatCompletionSystemMessageParam::content,
+          role: :system,
+          name: String
+        }
+
+        type content =
+          String | ::Array[DedalusSDK::Chat::ChatCompletionContentPartTextParam]
+
+        module Content
+          extend DedalusSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionSystemMessageParam::content]
+
+          ChatCompletionContentPartTextParamArray: DedalusSDK::Internal::Type::Converter
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,60 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionUserMessageParam = Chat::ChatCompletionUserMessageParam
+
+    module Chat
+      type chat_completion_user_message_param =
+        {
+          content: DedalusSDK::Models::Chat::ChatCompletionUserMessageParam::content,
+          role: :user,
+          name: String
+        }
+
+      class ChatCompletionUserMessageParam < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor content: DedalusSDK::Models::Chat::ChatCompletionUserMessageParam::content
+
+        attr_accessor role: :user
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        def initialize: (
+          content: DedalusSDK::Models::Chat::ChatCompletionUserMessageParam::content,
+          ?name: String,
+          ?role: :user
+        ) -> void
+
+        def to_hash: -> {
+          content: DedalusSDK::Models::Chat::ChatCompletionUserMessageParam::content,
+          role: :user,
+          name: String
+        }
+
+        type content =
+          String
+          | ::Array[DedalusSDK::Models::Chat::ChatCompletionUserMessageParam::Content::chat_completion_request_user_message_content_array]
+
+        module Content
+          extend DedalusSDK::Internal::Type::Union
+
+          type chat_completion_request_user_message_content_array =
+            DedalusSDK::Chat::ChatCompletionContentPartTextParam
+            | DedalusSDK::Chat::ChatCompletionContentPartImageParam
+            | DedalusSDK::Chat::ChatCompletionContentPartInputAudioParam
+            | DedalusSDK::Chat::ChatCompletionContentPartFileParam
+
+          module ChatCompletionRequestUserMessageContentArray
+            extend DedalusSDK::Internal::Type::Union
+
+            def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionUserMessageParam::Content::chat_completion_request_user_message_content_array]
+          end
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionUserMessageParam::content]
+
+          ChatCompletionRequestUserMessageContent2DArray: DedalusSDK::Internal::Type::Converter
+        end
+      end
+    end
+  end
+end

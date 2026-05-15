@@ -1,0 +1,38 @@
+module DedalusSDK
+  module Models
+    module Chat
+      type prediction_content =
+        {
+          content: DedalusSDK::Models::Chat::PredictionContent::content,
+          type: :content
+        }
+
+      class PredictionContent < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor content: DedalusSDK::Models::Chat::PredictionContent::content
+
+        attr_accessor type: :content
+
+        def initialize: (
+          content: DedalusSDK::Models::Chat::PredictionContent::content,
+          ?type: :content
+        ) -> void
+
+        def to_hash: -> {
+          content: DedalusSDK::Models::Chat::PredictionContent::content,
+          type: :content
+        }
+
+        type content =
+          String | ::Array[DedalusSDK::Chat::ChatCompletionContentPartTextParam]
+
+        module Content
+          extend DedalusSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::PredictionContent::content]
+
+          ChatCompletionContentPartTextParamArray: DedalusSDK::Internal::Type::Converter
+        end
+      end
+    end
+  end
+end

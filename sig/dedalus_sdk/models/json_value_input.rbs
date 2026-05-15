@@ -1,0 +1,20 @@
+module DedalusSDK
+  module Models
+    type json_value_input =
+      String
+      | Float
+      | bool
+      | ::Hash[Symbol, DedalusSDK::Models::json_value_input?]
+      | ::Array[DedalusSDK::Models::json_value_input?]
+
+    module JSONValueInput
+      extend DedalusSDK::Internal::Type::Union
+
+      def self?.variants: -> ::Array[DedalusSDK::Models::json_value_input]
+
+      JSONValueInputMap: DedalusSDK::Internal::Type::Converter
+
+      JSONValueInputArray: DedalusSDK::Internal::Type::Converter
+    end
+  end
+end

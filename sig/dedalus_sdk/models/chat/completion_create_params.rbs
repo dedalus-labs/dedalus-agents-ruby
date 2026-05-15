@@ -1,0 +1,17 @@
+module DedalusSDK
+  module Models
+    module Chat
+      type completion_create_params =
+        {  } & DedalusSDK::Internal::Type::request_parameters
+
+      class CompletionCreateParams < DedalusSDK::Models::Chat::ChatCompletionCreateParams
+        extend DedalusSDK::Internal::Type::RequestParameters::Converter
+        include DedalusSDK::Internal::Type::RequestParameters
+
+        def initialize: (?request_options: DedalusSDK::request_opts) -> void
+
+        def to_hash: -> { request_options: DedalusSDK::RequestOptions }
+      end
+    end
+  end
+end

@@ -1,0 +1,60 @@
+# typed: strong
+
+module DedalusSDK
+  module Models
+    module Chat
+      class ThinkingConfigEnabled < DedalusSDK::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias do
+            T.any(
+              DedalusSDK::Chat::ThinkingConfigEnabled,
+              DedalusSDK::Internal::AnyHash
+            )
+          end
+
+        # Determines how many tokens Claude can use for its internal reasoning process.
+        # Larger budgets can enable more thorough analysis for complex problems, improving
+        # response quality.
+        #
+        # Must be ≥1024 and less than `max_tokens`.
+        #
+        # See
+        # [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking)
+        # for details.
+        sig { returns(Integer) }
+        attr_accessor :budget_tokens
+
+        sig { returns(Symbol) }
+        attr_accessor :type
+
+        # Schema for ThinkingConfigEnabled.
+        #
+        # Fields:
+        #
+        # - budget_tokens (required): int
+        # - type (required): Literal["enabled"]
+        sig do
+          params(budget_tokens: Integer, type: Symbol).returns(T.attached_class)
+        end
+        def self.new(
+          # Determines how many tokens Claude can use for its internal reasoning process.
+          # Larger budgets can enable more thorough analysis for complex problems, improving
+          # response quality.
+          #
+          # Must be ≥1024 and less than `max_tokens`.
+          #
+          # See
+          # [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking)
+          # for details.
+          budget_tokens:,
+          type: :enabled
+        )
+        end
+
+        sig { override.returns({ budget_tokens: Integer, type: Symbol }) }
+        def to_hash
+        end
+      end
+    end
+  end
+end

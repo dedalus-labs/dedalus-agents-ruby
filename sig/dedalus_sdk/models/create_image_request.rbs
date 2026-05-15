@@ -1,0 +1,182 @@
+module DedalusSDK
+  module Models
+    type create_image_request =
+      {
+        prompt: String,
+        background: DedalusSDK::Models::CreateImageRequest::background?,
+        model: String?,
+        moderation: DedalusSDK::Models::CreateImageRequest::moderation?,
+        n: Integer?,
+        output_compression: Integer?,
+        output_format: DedalusSDK::Models::CreateImageRequest::output_format?,
+        partial_images: Integer?,
+        quality: DedalusSDK::Models::CreateImageRequest::quality?,
+        response_format: DedalusSDK::Models::CreateImageRequest::response_format?,
+        size: DedalusSDK::Models::CreateImageRequest::size?,
+        stream: bool?,
+        style: DedalusSDK::Models::CreateImageRequest::style?,
+        user: String?
+      }
+
+    class CreateImageRequest < DedalusSDK::Internal::Type::BaseModel
+      attr_accessor prompt: String
+
+      attr_accessor background: DedalusSDK::Models::CreateImageRequest::background?
+
+      attr_accessor model: String?
+
+      attr_accessor moderation: DedalusSDK::Models::CreateImageRequest::moderation?
+
+      attr_accessor n: Integer?
+
+      attr_accessor output_compression: Integer?
+
+      attr_accessor output_format: DedalusSDK::Models::CreateImageRequest::output_format?
+
+      attr_accessor partial_images: Integer?
+
+      attr_accessor quality: DedalusSDK::Models::CreateImageRequest::quality?
+
+      attr_accessor response_format: DedalusSDK::Models::CreateImageRequest::response_format?
+
+      attr_accessor size: DedalusSDK::Models::CreateImageRequest::size?
+
+      attr_accessor stream: bool?
+
+      attr_accessor style: DedalusSDK::Models::CreateImageRequest::style?
+
+      attr_accessor user: String?
+
+      def initialize: (
+        prompt: String,
+        ?background: DedalusSDK::Models::CreateImageRequest::background?,
+        ?model: String?,
+        ?moderation: DedalusSDK::Models::CreateImageRequest::moderation?,
+        ?n: Integer?,
+        ?output_compression: Integer?,
+        ?output_format: DedalusSDK::Models::CreateImageRequest::output_format?,
+        ?partial_images: Integer?,
+        ?quality: DedalusSDK::Models::CreateImageRequest::quality?,
+        ?response_format: DedalusSDK::Models::CreateImageRequest::response_format?,
+        ?size: DedalusSDK::Models::CreateImageRequest::size?,
+        ?stream: bool?,
+        ?style: DedalusSDK::Models::CreateImageRequest::style?,
+        ?user: String?
+      ) -> void
+
+      def to_hash: -> {
+        prompt: String,
+        background: DedalusSDK::Models::CreateImageRequest::background?,
+        model: String?,
+        moderation: DedalusSDK::Models::CreateImageRequest::moderation?,
+        n: Integer?,
+        output_compression: Integer?,
+        output_format: DedalusSDK::Models::CreateImageRequest::output_format?,
+        partial_images: Integer?,
+        quality: DedalusSDK::Models::CreateImageRequest::quality?,
+        response_format: DedalusSDK::Models::CreateImageRequest::response_format?,
+        size: DedalusSDK::Models::CreateImageRequest::size?,
+        stream: bool?,
+        style: DedalusSDK::Models::CreateImageRequest::style?,
+        user: String?
+      }
+
+      type background = :transparent | :opaque | :auto
+
+      module Background
+        extend DedalusSDK::Internal::Type::Enum
+
+        TRANSPARENT: :transparent
+        OPAQUE: :opaque
+        AUTO: :auto
+
+        def self?.values: -> ::Array[DedalusSDK::Models::CreateImageRequest::background]
+      end
+
+      type moderation = :low | :auto
+
+      module Moderation
+        extend DedalusSDK::Internal::Type::Enum
+
+        LOW: :low
+        AUTO: :auto
+
+        def self?.values: -> ::Array[DedalusSDK::Models::CreateImageRequest::moderation]
+      end
+
+      type output_format = :png | :jpeg | :webp
+
+      module OutputFormat
+        extend DedalusSDK::Internal::Type::Enum
+
+        PNG: :png
+        JPEG: :jpeg
+        WEBP: :webp
+
+        def self?.values: -> ::Array[DedalusSDK::Models::CreateImageRequest::output_format]
+      end
+
+      type quality = :auto | :high | :medium | :low | :hd | :standard
+
+      module Quality
+        extend DedalusSDK::Internal::Type::Enum
+
+        AUTO: :auto
+        HIGH: :high
+        MEDIUM: :medium
+        LOW: :low
+        HD: :hd
+        STANDARD: :standard
+
+        def self?.values: -> ::Array[DedalusSDK::Models::CreateImageRequest::quality]
+      end
+
+      type response_format = :url | :b64_json
+
+      module ResponseFormat
+        extend DedalusSDK::Internal::Type::Enum
+
+        URL: :url
+        B64_JSON: :b64_json
+
+        def self?.values: -> ::Array[DedalusSDK::Models::CreateImageRequest::response_format]
+      end
+
+      type size =
+        :"256x256"
+        | :"512x512"
+        | :"1024x1024"
+        | :"1536x1024"
+        | :"1024x1536"
+        | :"1792x1024"
+        | :"1024x1792"
+        | :auto
+
+      module Size
+        extend DedalusSDK::Internal::Type::Enum
+
+        SIZE_256X256: :"256x256"
+        SIZE_512X512: :"512x512"
+        SIZE_1024X1024: :"1024x1024"
+        SIZE_1536X1024: :"1536x1024"
+        SIZE_1024X1536: :"1024x1536"
+        SIZE_1792X1024: :"1792x1024"
+        SIZE_1024X1792: :"1024x1792"
+        AUTO: :auto
+
+        def self?.values: -> ::Array[DedalusSDK::Models::CreateImageRequest::size]
+      end
+
+      type style = :vivid | :natural
+
+      module Style
+        extend DedalusSDK::Internal::Type::Enum
+
+        VIVID: :vivid
+        NATURAL: :natural
+
+        def self?.values: -> ::Array[DedalusSDK::Models::CreateImageRequest::style]
+      end
+    end
+  end
+end

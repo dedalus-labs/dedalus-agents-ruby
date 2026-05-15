@@ -1,0 +1,39 @@
+module DedalusSDK
+  module Models
+    type list_models_response =
+      {
+        data: ::Array[DedalusSDK::Model],
+        object: DedalusSDK::Models::ListModelsResponse::object
+      }
+
+    class ListModelsResponse < DedalusSDK::Internal::Type::BaseModel
+      attr_accessor data: ::Array[DedalusSDK::Model]
+
+      attr_reader object: DedalusSDK::Models::ListModelsResponse::object?
+
+      def object=: (
+        DedalusSDK::Models::ListModelsResponse::object
+      ) -> DedalusSDK::Models::ListModelsResponse::object
+
+      def initialize: (
+        data: ::Array[DedalusSDK::Model],
+        ?object: DedalusSDK::Models::ListModelsResponse::object
+      ) -> void
+
+      def to_hash: -> {
+        data: ::Array[DedalusSDK::Model],
+        object: DedalusSDK::Models::ListModelsResponse::object
+      }
+
+      type object = :list
+
+      module Object
+        extend DedalusSDK::Internal::Type::Enum
+
+        LIST: :list
+
+        def self?.values: -> ::Array[DedalusSDK::Models::ListModelsResponse::object]
+      end
+    end
+  end
+end

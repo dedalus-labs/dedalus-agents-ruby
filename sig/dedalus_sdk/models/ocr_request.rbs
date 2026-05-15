@@ -1,0 +1,20 @@
+module DedalusSDK
+  module Models
+    type ocr_request = { document: DedalusSDK::OCRDocument, model: String }
+
+    class OCRRequest < DedalusSDK::Internal::Type::BaseModel
+      attr_accessor document: DedalusSDK::OCRDocument
+
+      attr_reader model: String?
+
+      def model=: (String) -> String
+
+      def initialize: (
+        document: DedalusSDK::OCRDocument,
+        ?model: String
+      ) -> void
+
+      def to_hash: -> { document: DedalusSDK::OCRDocument, model: String }
+    end
+  end
+end

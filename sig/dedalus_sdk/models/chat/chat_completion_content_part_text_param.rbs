@@ -1,0 +1,20 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionContentPartTextParam = Chat::ChatCompletionContentPartTextParam
+
+    module Chat
+      type chat_completion_content_part_text_param =
+        { text: String, type: :text }
+
+      class ChatCompletionContentPartTextParam < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor text: String
+
+        attr_accessor type: :text
+
+        def initialize: (text: String, ?type: :text) -> void
+
+        def to_hash: -> { text: String, type: :text }
+      end
+    end
+  end
+end

@@ -1,0 +1,48 @@
+module DedalusSDK
+  module Models
+    module Audio
+      type translation_create_params =
+        {
+          file: DedalusSDK::Internal::file_input,
+          model: String,
+          prompt: String?,
+          response_format: String?,
+          temperature: Float?
+        }
+        & DedalusSDK::Internal::Type::request_parameters
+
+      class TranslationCreateParams < DedalusSDK::Internal::Type::BaseModel
+        extend DedalusSDK::Internal::Type::RequestParameters::Converter
+        include DedalusSDK::Internal::Type::RequestParameters
+
+        attr_accessor file: DedalusSDK::Internal::file_input
+
+        attr_accessor model: String
+
+        attr_accessor prompt: String?
+
+        attr_accessor response_format: String?
+
+        attr_accessor temperature: Float?
+
+        def initialize: (
+          file: DedalusSDK::Internal::file_input,
+          model: String,
+          ?prompt: String?,
+          ?response_format: String?,
+          ?temperature: Float?,
+          ?request_options: DedalusSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          file: DedalusSDK::Internal::file_input,
+          model: String,
+          prompt: String?,
+          response_format: String?,
+          temperature: Float?,
+          request_options: DedalusSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

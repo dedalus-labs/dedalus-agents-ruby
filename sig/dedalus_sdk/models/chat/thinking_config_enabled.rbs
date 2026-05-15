@@ -1,0 +1,17 @@
+module DedalusSDK
+  module Models
+    module Chat
+      type thinking_config_enabled = { budget_tokens: Integer, type: :enabled }
+
+      class ThinkingConfigEnabled < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor budget_tokens: Integer
+
+        attr_accessor type: :enabled
+
+        def initialize: (budget_tokens: Integer, ?type: :enabled) -> void
+
+        def to_hash: -> { budget_tokens: Integer, type: :enabled }
+      end
+    end
+  end
+end

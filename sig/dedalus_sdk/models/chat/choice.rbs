@@ -1,0 +1,52 @@
+module DedalusSDK
+  module Models
+    module Chat
+      type choice =
+        {
+          index: Integer,
+          message: DedalusSDK::Chat::ChatCompletionMessage,
+          finish_reason: DedalusSDK::Models::Chat::Choice::finish_reason?,
+          logprobs: DedalusSDK::Chat::ChoiceLogprobs?
+        }
+
+      class Choice < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor index: Integer
+
+        attr_accessor message: DedalusSDK::Chat::ChatCompletionMessage
+
+        attr_accessor finish_reason: DedalusSDK::Models::Chat::Choice::finish_reason?
+
+        attr_accessor logprobs: DedalusSDK::Chat::ChoiceLogprobs?
+
+        def initialize: (
+          index: Integer,
+          message: DedalusSDK::Chat::ChatCompletionMessage,
+          ?finish_reason: DedalusSDK::Models::Chat::Choice::finish_reason?,
+          ?logprobs: DedalusSDK::Chat::ChoiceLogprobs?
+        ) -> void
+
+        def to_hash: -> {
+          index: Integer,
+          message: DedalusSDK::Chat::ChatCompletionMessage,
+          finish_reason: DedalusSDK::Models::Chat::Choice::finish_reason?,
+          logprobs: DedalusSDK::Chat::ChoiceLogprobs?
+        }
+
+        type finish_reason =
+          :stop | :length | :tool_calls | :content_filter | :function_call
+
+        module FinishReason
+          extend DedalusSDK::Internal::Type::Enum
+
+          STOP: :stop
+          LENGTH: :length
+          TOOL_CALLS: :tool_calls
+          CONTENT_FILTER: :content_filter
+          FUNCTION_CALL: :function_call
+
+          def self?.values: -> ::Array[DedalusSDK::Models::Chat::Choice::finish_reason]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,75 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionAudioParam = Chat::ChatCompletionAudioParam
+
+    module Chat
+      type chat_completion_audio_param =
+        {
+          format_: DedalusSDK::Models::Chat::ChatCompletionAudioParam::format_,
+          voice: DedalusSDK::Models::Chat::ChatCompletionAudioParam::voice
+        }
+
+      class ChatCompletionAudioParam < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor format_: DedalusSDK::Models::Chat::ChatCompletionAudioParam::format_
+
+        attr_accessor voice: DedalusSDK::Models::Chat::ChatCompletionAudioParam::voice
+
+        def initialize: (
+          format_: DedalusSDK::Models::Chat::ChatCompletionAudioParam::format_,
+          voice: DedalusSDK::Models::Chat::ChatCompletionAudioParam::voice
+        ) -> void
+
+        def to_hash: -> {
+          format_: DedalusSDK::Models::Chat::ChatCompletionAudioParam::format_,
+          voice: DedalusSDK::Models::Chat::ChatCompletionAudioParam::voice
+        }
+
+        type format_ = :wav | :aac | :mp3 | :flac | :opus | :pcm16
+
+        module Format
+          extend DedalusSDK::Internal::Type::Enum
+
+          WAV: :wav
+          AAC: :aac
+          MP3: :mp3
+          FLAC: :flac
+          OPUS: :opus
+          PCM16: :pcm16
+
+          def self?.values: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionAudioParam::format_]
+        end
+
+        type voice =
+          String
+          | :alloy
+          | :ash
+          | :ballad
+          | :coral
+          | :echo
+          | :sage
+          | :shimmer
+          | :verse
+          | :marin
+          | :cedar
+          | DedalusSDK::VoiceIDsOrCustomVoice
+
+        module Voice
+          extend DedalusSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionAudioParam::voice]
+
+          ALLOY: :alloy
+          ASH: :ash
+          BALLAD: :ballad
+          CORAL: :coral
+          ECHO: :echo
+          SAGE: :sage
+          SHIMMER: :shimmer
+          VERSE: :verse
+          MARIN: :marin
+          CEDAR: :cedar
+        end
+      end
+    end
+  end
+end

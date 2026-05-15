@@ -1,0 +1,18 @@
+module DedalusSDK
+  module Resources
+    class Audio
+      class Translations
+        def create: (
+          file: DedalusSDK::Internal::file_input,
+          model: String,
+          ?prompt: String?,
+          ?response_format: String?,
+          ?temperature: Float?,
+          ?request_options: DedalusSDK::request_opts
+        ) -> DedalusSDK::Models::Audio::translation_create_response
+
+        def initialize: (client: DedalusSDK::Client) -> void
+      end
+    end
+  end
+end

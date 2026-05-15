@@ -1,0 +1,267 @@
+module DedalusSDK
+  module Models
+    type response =
+      {
+        id: String,
+        created_at: Float,
+        model: String,
+        output: ::Array[DedalusSDK::Models::json_object_input],
+        status: DedalusSDK::Models::Response::status,
+        background: bool?,
+        completed_at: Float?,
+        conversation: DedalusSDK::Models::json_object_input?,
+        error: DedalusSDK::Models::json_object_input?,
+        frequency_penalty: Float?,
+        incomplete_details: ::Hash[Symbol, String]?,
+        instructions: DedalusSDK::Models::Response::instructions?,
+        max_output_tokens: Integer?,
+        max_tool_calls: Integer?,
+        mcp_server_errors: ::Hash[Symbol, DedalusSDK::Response::MCPServerError]?,
+        mcp_tool_results: ::Array[DedalusSDK::MCPToolResult]?,
+        metadata: ::Hash[Symbol, String]?,
+        object: DedalusSDK::Models::Response::object,
+        output_text: String?,
+        parallel_tool_calls: bool?,
+        presence_penalty: Float?,
+        previous_response_id: String?,
+        prompt_cache_key: String?,
+        reasoning: DedalusSDK::Models::json_object_input?,
+        safety_identifier: String?,
+        service_tier: String?,
+        store: bool?,
+        temperature: Float?,
+        text: DedalusSDK::Models::json_object_input?,
+        tool_choice: DedalusSDK::Models::Response::tool_choice?,
+        tools: ::Array[DedalusSDK::Models::json_object_input]?,
+        tools_executed: ::Array[String]?,
+        top_logprobs: Integer?,
+        top_p: Float?,
+        truncation: String?,
+        usage: DedalusSDK::Models::json_object_input?
+      }
+
+    class Response < DedalusSDK::Internal::Type::BaseModel
+      attr_accessor id: String
+
+      attr_accessor created_at: Float
+
+      attr_accessor model: String
+
+      attr_accessor output: ::Array[DedalusSDK::Models::json_object_input]
+
+      attr_accessor status: DedalusSDK::Models::Response::status
+
+      attr_accessor background: bool?
+
+      attr_accessor completed_at: Float?
+
+      attr_accessor conversation: DedalusSDK::Models::json_object_input?
+
+      attr_accessor error: DedalusSDK::Models::json_object_input?
+
+      attr_accessor frequency_penalty: Float?
+
+      attr_accessor incomplete_details: ::Hash[Symbol, String]?
+
+      attr_accessor instructions: DedalusSDK::Models::Response::instructions?
+
+      attr_accessor max_output_tokens: Integer?
+
+      attr_accessor max_tool_calls: Integer?
+
+      attr_accessor mcp_server_errors: ::Hash[Symbol, DedalusSDK::Response::MCPServerError]?
+
+      attr_accessor mcp_tool_results: ::Array[DedalusSDK::MCPToolResult]?
+
+      attr_accessor metadata: ::Hash[Symbol, String]?
+
+      attr_reader object: DedalusSDK::Models::Response::object?
+
+      def object=: (
+        DedalusSDK::Models::Response::object
+      ) -> DedalusSDK::Models::Response::object
+
+      attr_accessor output_text: String?
+
+      attr_accessor parallel_tool_calls: bool?
+
+      attr_accessor presence_penalty: Float?
+
+      attr_accessor previous_response_id: String?
+
+      attr_accessor prompt_cache_key: String?
+
+      attr_accessor reasoning: DedalusSDK::Models::json_object_input?
+
+      attr_accessor safety_identifier: String?
+
+      attr_accessor service_tier: String?
+
+      attr_accessor store: bool?
+
+      attr_accessor temperature: Float?
+
+      attr_accessor text: DedalusSDK::Models::json_object_input?
+
+      attr_accessor tool_choice: DedalusSDK::Models::Response::tool_choice?
+
+      attr_accessor tools: ::Array[DedalusSDK::Models::json_object_input]?
+
+      attr_accessor tools_executed: ::Array[String]?
+
+      attr_accessor top_logprobs: Integer?
+
+      attr_accessor top_p: Float?
+
+      attr_accessor truncation: String?
+
+      attr_accessor usage: DedalusSDK::Models::json_object_input?
+
+      def initialize: (
+        id: String,
+        created_at: Float,
+        model: String,
+        output: ::Array[DedalusSDK::Models::json_object_input],
+        status: DedalusSDK::Models::Response::status,
+        ?background: bool?,
+        ?completed_at: Float?,
+        ?conversation: DedalusSDK::Models::json_object_input?,
+        ?error: DedalusSDK::Models::json_object_input?,
+        ?frequency_penalty: Float?,
+        ?incomplete_details: ::Hash[Symbol, String]?,
+        ?instructions: DedalusSDK::Models::Response::instructions?,
+        ?max_output_tokens: Integer?,
+        ?max_tool_calls: Integer?,
+        ?mcp_server_errors: ::Hash[Symbol, DedalusSDK::Response::MCPServerError]?,
+        ?mcp_tool_results: ::Array[DedalusSDK::MCPToolResult]?,
+        ?metadata: ::Hash[Symbol, String]?,
+        ?object: DedalusSDK::Models::Response::object,
+        ?output_text: String?,
+        ?parallel_tool_calls: bool?,
+        ?presence_penalty: Float?,
+        ?previous_response_id: String?,
+        ?prompt_cache_key: String?,
+        ?reasoning: DedalusSDK::Models::json_object_input?,
+        ?safety_identifier: String?,
+        ?service_tier: String?,
+        ?store: bool?,
+        ?temperature: Float?,
+        ?text: DedalusSDK::Models::json_object_input?,
+        ?tool_choice: DedalusSDK::Models::Response::tool_choice?,
+        ?tools: ::Array[DedalusSDK::Models::json_object_input]?,
+        ?tools_executed: ::Array[String]?,
+        ?top_logprobs: Integer?,
+        ?top_p: Float?,
+        ?truncation: String?,
+        ?usage: DedalusSDK::Models::json_object_input?
+      ) -> void
+
+      def to_hash: -> {
+        id: String,
+        created_at: Float,
+        model: String,
+        output: ::Array[DedalusSDK::Models::json_object_input],
+        status: DedalusSDK::Models::Response::status,
+        background: bool?,
+        completed_at: Float?,
+        conversation: DedalusSDK::Models::json_object_input?,
+        error: DedalusSDK::Models::json_object_input?,
+        frequency_penalty: Float?,
+        incomplete_details: ::Hash[Symbol, String]?,
+        instructions: DedalusSDK::Models::Response::instructions?,
+        max_output_tokens: Integer?,
+        max_tool_calls: Integer?,
+        mcp_server_errors: ::Hash[Symbol, DedalusSDK::Response::MCPServerError]?,
+        mcp_tool_results: ::Array[DedalusSDK::MCPToolResult]?,
+        metadata: ::Hash[Symbol, String]?,
+        object: DedalusSDK::Models::Response::object,
+        output_text: String?,
+        parallel_tool_calls: bool?,
+        presence_penalty: Float?,
+        previous_response_id: String?,
+        prompt_cache_key: String?,
+        reasoning: DedalusSDK::Models::json_object_input?,
+        safety_identifier: String?,
+        service_tier: String?,
+        store: bool?,
+        temperature: Float?,
+        text: DedalusSDK::Models::json_object_input?,
+        tool_choice: DedalusSDK::Models::Response::tool_choice?,
+        tools: ::Array[DedalusSDK::Models::json_object_input]?,
+        tools_executed: ::Array[String]?,
+        top_logprobs: Integer?,
+        top_p: Float?,
+        truncation: String?,
+        usage: DedalusSDK::Models::json_object_input?
+      }
+
+      type status =
+        :completed | :failed | :in_progress | :cancelled | :queued | :incomplete
+
+      module Status
+        extend DedalusSDK::Internal::Type::Enum
+
+        COMPLETED: :completed
+        FAILED: :failed
+        IN_PROGRESS: :in_progress
+        CANCELLED: :cancelled
+        QUEUED: :queued
+        INCOMPLETE: :incomplete
+
+        def self?.values: -> ::Array[DedalusSDK::Models::Response::status]
+      end
+
+      type instructions =
+        String | ::Array[DedalusSDK::Models::json_object_input]
+
+      module Instructions
+        extend DedalusSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::Response::instructions]
+
+        JSONObjectInputArray: DedalusSDK::Internal::Type::Converter
+      end
+
+      type mcp_server_error =
+        { message: String, code: String?, recommendation: String? }
+
+      class MCPServerError < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor message: String
+
+        attr_accessor code: String?
+
+        attr_accessor recommendation: String?
+
+        def initialize: (
+          message: String,
+          ?code: String?,
+          ?recommendation: String?
+        ) -> void
+
+        def to_hash: -> {
+          message: String,
+          code: String?,
+          recommendation: String?
+        }
+      end
+
+      type object = :response
+
+      module Object
+        extend DedalusSDK::Internal::Type::Enum
+
+        RESPONSE: :response
+
+        def self?.values: -> ::Array[DedalusSDK::Models::Response::object]
+      end
+
+      type tool_choice = String | DedalusSDK::Models::json_object_input
+
+      module ToolChoice
+        extend DedalusSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::Response::tool_choice]
+      end
+    end
+  end
+end

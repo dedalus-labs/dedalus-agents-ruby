@@ -1,0 +1,25 @@
+module DedalusSDK
+  module Models
+    type image = { :b64_json => String?, revised_prompt: String?, url: String? }
+
+    class Image < DedalusSDK::Internal::Type::BaseModel
+      attr_accessor b64_json: String?
+
+      attr_accessor revised_prompt: String?
+
+      attr_accessor url: String?
+
+      def initialize: (
+        ?b64_json: String?,
+        ?revised_prompt: String?,
+        ?url: String?
+      ) -> void
+
+      def to_hash: -> {
+        :b64_json => String?,
+        revised_prompt: String?,
+        url: String?
+      }
+    end
+  end
+end

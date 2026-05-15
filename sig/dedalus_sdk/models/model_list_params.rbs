@@ -1,0 +1,15 @@
+module DedalusSDK
+  module Models
+    type model_list_params =
+      {  } & DedalusSDK::Internal::Type::request_parameters
+
+    class ModelListParams < DedalusSDK::Internal::Type::BaseModel
+      extend DedalusSDK::Internal::Type::RequestParameters::Converter
+      include DedalusSDK::Internal::Type::RequestParameters
+
+      def initialize: (?request_options: DedalusSDK::request_opts) -> void
+
+      def to_hash: -> { request_options: DedalusSDK::RequestOptions }
+    end
+  end
+end

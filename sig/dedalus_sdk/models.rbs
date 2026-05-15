@@ -1,0 +1,81 @@
+module DedalusSDK
+  module Audio = DedalusSDK::Models::Audio
+
+  module Chat = DedalusSDK::Models::Chat
+
+  class CreateEmbeddingRequest = DedalusSDK::Models::CreateEmbeddingRequest
+
+  class CreateEmbeddingResponse = DedalusSDK::Models::CreateEmbeddingResponse
+
+  class CreateImageRequest = DedalusSDK::Models::CreateImageRequest
+
+  class Credential = DedalusSDK::Models::Credential
+
+  class DedalusModel = DedalusSDK::Models::DedalusModel
+
+  module DedalusModelChoice = DedalusSDK::Models::DedalusModelChoice
+
+  class EmbeddingCreateParams = DedalusSDK::Models::EmbeddingCreateParams
+
+  class FunctionDefinition = DedalusSDK::Models::FunctionDefinition
+
+  class Image = DedalusSDK::Models::Image
+
+  class ImageCreateVariationParams = DedalusSDK::Models::ImageCreateVariationParams
+
+  class ImageEditParams = DedalusSDK::Models::ImageEditParams
+
+  class ImageGenerateParams = DedalusSDK::Models::ImageGenerateParams
+
+  class ImagesResponse = DedalusSDK::Models::ImagesResponse
+
+  JSONObjectInput: DedalusSDK::Internal::Type::Converter
+
+  module JSONValueInput = DedalusSDK::Models::JSONValueInput
+
+  class ListModelsResponse = DedalusSDK::Models::ListModelsResponse
+
+  type mcp_server_item = DedalusSDK::Models::mcp_server_item
+
+  MCPCredentials: DedalusSDK::Internal::Type::Converter
+
+  MCPServers: DedalusSDK::Internal::Type::Converter
+
+  class MCPServerSpec = DedalusSDK::Models::MCPServerSpec
+
+  class MCPToolResult = DedalusSDK::Models::MCPToolResult
+
+  class Model = DedalusSDK::Models::Model
+
+  class ModelListParams = DedalusSDK::Models::ModelListParams
+
+  class ModelRetrieveParams = DedalusSDK::Models::ModelRetrieveParams
+
+  class ModelSettings = DedalusSDK::Models::ModelSettings
+
+  class OCRDocument = DedalusSDK::Models::OCRDocument
+
+  class OCRPage = DedalusSDK::Models::OCRPage
+
+  class OCRProcessParams = DedalusSDK::Models::OCRProcessParams
+
+  class OCRRequest = DedalusSDK::Models::OCRRequest
+
+  class OCRResponse = DedalusSDK::Models::OCRResponse
+
+  class Reasoning = DedalusSDK::Models::Reasoning
+
+  class Response = DedalusSDK::Models::Response
+
+  class ResponseCreateParams = DedalusSDK::Models::ResponseCreateParams
+
+  class ResponseFormatJSONObject = DedalusSDK::Models::ResponseFormatJSONObject
+
+  class ResponseFormatJSONSchema = DedalusSDK::Models::ResponseFormatJSONSchema
+
+  class ResponseFormatText = DedalusSDK::Models::ResponseFormatText
+
+  module ToolChoice = DedalusSDK::Models::ToolChoice
+
+  class VoiceIDsOrCustomVoice = DedalusSDK::Models::VoiceIDsOrCustomVoice
+end

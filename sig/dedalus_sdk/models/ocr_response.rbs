@@ -1,0 +1,30 @@
+module DedalusSDK
+  module Models
+    type ocr_response =
+      {
+        model: String,
+        pages: ::Array[DedalusSDK::OCRPage],
+        usage: ::Hash[Symbol, top]?
+      }
+
+    class OCRResponse < DedalusSDK::Internal::Type::BaseModel
+      attr_accessor model: String
+
+      attr_accessor pages: ::Array[DedalusSDK::OCRPage]
+
+      attr_accessor usage: ::Hash[Symbol, top]?
+
+      def initialize: (
+        model: String,
+        pages: ::Array[DedalusSDK::OCRPage],
+        ?usage: ::Hash[Symbol, top]?
+      ) -> void
+
+      def to_hash: -> {
+        model: String,
+        pages: ::Array[DedalusSDK::OCRPage],
+        usage: ::Hash[Symbol, top]?
+      }
+    end
+  end
+end

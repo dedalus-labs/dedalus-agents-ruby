@@ -1,0 +1,25 @@
+module DedalusSDK
+  module Models
+    module Chat
+      type prompt_tokens_details =
+        { audio_tokens: Integer, cached_tokens: Integer }
+
+      class PromptTokensDetails < DedalusSDK::Internal::Type::BaseModel
+        attr_reader audio_tokens: Integer?
+
+        def audio_tokens=: (Integer) -> Integer
+
+        attr_reader cached_tokens: Integer?
+
+        def cached_tokens=: (Integer) -> Integer
+
+        def initialize: (
+          ?audio_tokens: Integer,
+          ?cached_tokens: Integer
+        ) -> void
+
+        def to_hash: -> { audio_tokens: Integer, cached_tokens: Integer }
+      end
+    end
+  end
+end

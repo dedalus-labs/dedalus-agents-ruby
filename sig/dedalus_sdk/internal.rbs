@@ -1,0 +1,9 @@
+module DedalusSDK
+  module Internal
+    extend DedalusSDK::Internal::Util::SorbetRuntimeSupport
+
+    type file_input = Pathname | StringIO | IO | String | DedalusSDK::FilePart
+
+    OMIT: Object
+  end
+end

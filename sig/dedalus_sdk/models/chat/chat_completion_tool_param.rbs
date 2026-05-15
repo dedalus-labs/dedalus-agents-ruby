@@ -1,0 +1,43 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionToolParam = Chat::ChatCompletionToolParam
+
+    module Chat
+      type chat_completion_tool_param =
+        {
+          function: DedalusSDK::FunctionDefinition,
+          type: DedalusSDK::Models::Chat::ChatCompletionToolParam::type_
+        }
+
+      class ChatCompletionToolParam < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor function: DedalusSDK::FunctionDefinition
+
+        attr_reader type: DedalusSDK::Models::Chat::ChatCompletionToolParam::type_?
+
+        def type=: (
+          DedalusSDK::Models::Chat::ChatCompletionToolParam::type_
+        ) -> DedalusSDK::Models::Chat::ChatCompletionToolParam::type_
+
+        def initialize: (
+          function: DedalusSDK::FunctionDefinition,
+          ?type: DedalusSDK::Models::Chat::ChatCompletionToolParam::type_
+        ) -> void
+
+        def to_hash: -> {
+          function: DedalusSDK::FunctionDefinition,
+          type: DedalusSDK::Models::Chat::ChatCompletionToolParam::type_
+        }
+
+        type type_ = :function
+
+        module Type
+          extend DedalusSDK::Internal::Type::Enum
+
+          FUNCTION: :function
+
+          def self?.values: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionToolParam::type_]
+        end
+      end
+    end
+  end
+end
