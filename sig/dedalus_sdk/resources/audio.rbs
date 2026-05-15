@@ -1,0 +1,13 @@
+module DedalusSDK
+  module Resources
+    class Audio
+      attr_reader speech: DedalusSDK::Resources::Audio::Speech
+
+      attr_reader transcriptions: DedalusSDK::Resources::Audio::Transcriptions
+
+      attr_reader translations: DedalusSDK::Resources::Audio::Translations
+
+      def initialize: (client: DedalusSDK::Client) -> void
+    end
+  end
+end

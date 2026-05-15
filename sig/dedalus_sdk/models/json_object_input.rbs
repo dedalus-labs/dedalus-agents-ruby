@@ -1,0 +1,8 @@
+module DedalusSDK
+  module Models
+    type json_object_input =
+      ::Hash[Symbol, DedalusSDK::Models::json_value_input?]
+
+    JSONObjectInput: DedalusSDK::Internal::Type::Converter
+  end
+end

@@ -1,0 +1,69 @@
+module DedalusSDK
+  module Models
+    type reasoning =
+      {
+        effort: DedalusSDK::Models::Reasoning::effort?,
+        generate_summary: DedalusSDK::Models::Reasoning::generate_summary?,
+        summary: DedalusSDK::Models::Reasoning::summary?
+      }
+
+    class Reasoning < DedalusSDK::Internal::Type::BaseModel
+      attr_accessor effort: DedalusSDK::Models::Reasoning::effort?
+
+      attr_accessor generate_summary: DedalusSDK::Models::Reasoning::generate_summary?
+
+      attr_accessor summary: DedalusSDK::Models::Reasoning::summary?
+
+      def initialize: (
+        ?effort: DedalusSDK::Models::Reasoning::effort?,
+        ?generate_summary: DedalusSDK::Models::Reasoning::generate_summary?,
+        ?summary: DedalusSDK::Models::Reasoning::summary?
+      ) -> void
+
+      def to_hash: -> {
+        effort: DedalusSDK::Models::Reasoning::effort?,
+        generate_summary: DedalusSDK::Models::Reasoning::generate_summary?,
+        summary: DedalusSDK::Models::Reasoning::summary?
+      }
+
+      type effort = :none | :minimal | :low | :medium | :high | :xhigh
+
+      module Effort
+        extend DedalusSDK::Internal::Type::Enum
+
+        NONE: :none
+        MINIMAL: :minimal
+        LOW: :low
+        MEDIUM: :medium
+        HIGH: :high
+        XHIGH: :xhigh
+
+        def self?.values: -> ::Array[DedalusSDK::Models::Reasoning::effort]
+      end
+
+      type generate_summary = :auto | :concise | :detailed
+
+      module GenerateSummary
+        extend DedalusSDK::Internal::Type::Enum
+
+        AUTO: :auto
+        CONCISE: :concise
+        DETAILED: :detailed
+
+        def self?.values: -> ::Array[DedalusSDK::Models::Reasoning::generate_summary]
+      end
+
+      type summary = :auto | :concise | :detailed
+
+      module Summary
+        extend DedalusSDK::Internal::Type::Enum
+
+        AUTO: :auto
+        CONCISE: :concise
+        DETAILED: :detailed
+
+        def self?.values: -> ::Array[DedalusSDK::Models::Reasoning::summary]
+      end
+    end
+  end
+end

@@ -1,0 +1,34 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionFunctions = Chat::ChatCompletionFunctions
+
+    module Chat
+      type chat_completion_functions =
+        { name: String, description: String, parameters: ::Hash[Symbol, top] }
+
+      class ChatCompletionFunctions < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor name: String
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader parameters: ::Hash[Symbol, top]?
+
+        def parameters=: (::Hash[Symbol, top]) -> ::Hash[Symbol, top]
+
+        def initialize: (
+          name: String,
+          ?description: String,
+          ?parameters: ::Hash[Symbol, top]
+        ) -> void
+
+        def to_hash: -> {
+          name: String,
+          description: String,
+          parameters: ::Hash[Symbol, top]
+        }
+      end
+    end
+  end
+end

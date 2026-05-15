@@ -1,0 +1,51 @@
+module DedalusSDK
+  module Models
+    type image_create_variation_params =
+      {
+        image: DedalusSDK::Internal::file_input,
+        model: String?,
+        n: Integer?,
+        response_format: String?,
+        size: String?,
+        user: String?
+      }
+      & DedalusSDK::Internal::Type::request_parameters
+
+    class ImageCreateVariationParams < DedalusSDK::Internal::Type::BaseModel
+      extend DedalusSDK::Internal::Type::RequestParameters::Converter
+      include DedalusSDK::Internal::Type::RequestParameters
+
+      attr_accessor image: DedalusSDK::Internal::file_input
+
+      attr_accessor model: String?
+
+      attr_accessor n: Integer?
+
+      attr_accessor response_format: String?
+
+      attr_accessor size: String?
+
+      attr_accessor user: String?
+
+      def initialize: (
+        image: DedalusSDK::Internal::file_input,
+        ?model: String?,
+        ?n: Integer?,
+        ?response_format: String?,
+        ?size: String?,
+        ?user: String?,
+        ?request_options: DedalusSDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        image: DedalusSDK::Internal::file_input,
+        model: String?,
+        n: Integer?,
+        response_format: String?,
+        size: String?,
+        user: String?,
+        request_options: DedalusSDK::RequestOptions
+      }
+    end
+  end
+end

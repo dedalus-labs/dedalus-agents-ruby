@@ -1,0 +1,13 @@
+module DedalusSDK
+  module Resources
+    class OCR
+      def process: (
+        document: DedalusSDK::OCRDocument,
+        ?model: String,
+        ?request_options: DedalusSDK::request_opts
+      ) -> DedalusSDK::OCRResponse
+
+      def initialize: (client: DedalusSDK::Client) -> void
+    end
+  end
+end

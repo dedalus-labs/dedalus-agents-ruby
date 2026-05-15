@@ -1,0 +1,9 @@
+module DedalusSDK
+  module Internal
+    class Stream[Elem]
+      include DedalusSDK::Internal::Type::BaseStream[DedalusSDK::Internal::Util::server_sent_event, Elem]
+
+      private def iterator: -> Enumerable[Elem]
+    end
+  end
+end

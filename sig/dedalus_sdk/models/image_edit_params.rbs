@@ -1,0 +1,61 @@
+module DedalusSDK
+  module Models
+    type image_edit_params =
+      {
+        image: DedalusSDK::Internal::file_input,
+        prompt: String,
+        mask: DedalusSDK::Internal::file_input?,
+        model: String?,
+        n: Integer?,
+        response_format: String?,
+        size: String?,
+        user: String?
+      }
+      & DedalusSDK::Internal::Type::request_parameters
+
+    class ImageEditParams < DedalusSDK::Internal::Type::BaseModel
+      extend DedalusSDK::Internal::Type::RequestParameters::Converter
+      include DedalusSDK::Internal::Type::RequestParameters
+
+      attr_accessor image: DedalusSDK::Internal::file_input
+
+      attr_accessor prompt: String
+
+      attr_accessor mask: DedalusSDK::Internal::file_input?
+
+      attr_accessor model: String?
+
+      attr_accessor n: Integer?
+
+      attr_accessor response_format: String?
+
+      attr_accessor size: String?
+
+      attr_accessor user: String?
+
+      def initialize: (
+        image: DedalusSDK::Internal::file_input,
+        prompt: String,
+        ?mask: DedalusSDK::Internal::file_input?,
+        ?model: String?,
+        ?n: Integer?,
+        ?response_format: String?,
+        ?size: String?,
+        ?user: String?,
+        ?request_options: DedalusSDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        image: DedalusSDK::Internal::file_input,
+        prompt: String,
+        mask: DedalusSDK::Internal::file_input?,
+        model: String?,
+        n: Integer?,
+        response_format: String?,
+        size: String?,
+        user: String?,
+        request_options: DedalusSDK::RequestOptions
+      }
+    end
+  end
+end

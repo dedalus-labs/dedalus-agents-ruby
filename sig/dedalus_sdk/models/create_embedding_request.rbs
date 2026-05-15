@@ -1,0 +1,90 @@
+module DedalusSDK
+  module Models
+    type create_embedding_request =
+      {
+        input: DedalusSDK::Models::CreateEmbeddingRequest::input,
+        model: DedalusSDK::Models::CreateEmbeddingRequest::model,
+        dimensions: Integer,
+        encoding_format: DedalusSDK::Models::CreateEmbeddingRequest::encoding_format,
+        user: String
+      }
+
+    class CreateEmbeddingRequest < DedalusSDK::Internal::Type::BaseModel
+      attr_accessor input: DedalusSDK::Models::CreateEmbeddingRequest::input
+
+      attr_accessor model: DedalusSDK::Models::CreateEmbeddingRequest::model
+
+      attr_reader dimensions: Integer?
+
+      def dimensions=: (Integer) -> Integer
+
+      attr_reader encoding_format: DedalusSDK::Models::CreateEmbeddingRequest::encoding_format?
+
+      def encoding_format=: (
+        DedalusSDK::Models::CreateEmbeddingRequest::encoding_format
+      ) -> DedalusSDK::Models::CreateEmbeddingRequest::encoding_format
+
+      attr_reader user: String?
+
+      def user=: (String) -> String
+
+      def initialize: (
+        input: DedalusSDK::Models::CreateEmbeddingRequest::input,
+        model: DedalusSDK::Models::CreateEmbeddingRequest::model,
+        ?dimensions: Integer,
+        ?encoding_format: DedalusSDK::Models::CreateEmbeddingRequest::encoding_format,
+        ?user: String
+      ) -> void
+
+      def to_hash: -> {
+        input: DedalusSDK::Models::CreateEmbeddingRequest::input,
+        model: DedalusSDK::Models::CreateEmbeddingRequest::model,
+        dimensions: Integer,
+        encoding_format: DedalusSDK::Models::CreateEmbeddingRequest::encoding_format,
+        user: String
+      }
+
+      type input =
+        String | ::Array[String] | ::Array[Integer] | ::Array[::Array[Integer]]
+
+      module Input
+        extend DedalusSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::CreateEmbeddingRequest::input]
+
+        StringArray: DedalusSDK::Internal::Type::Converter
+
+        IntegerArray: DedalusSDK::Internal::Type::Converter
+
+        EmbeddingRequestInput2DArray: DedalusSDK::Internal::Type::Converter
+      end
+
+      type model =
+        String
+        | :"text-embedding-ada-002"
+        | :"text-embedding-3-small"
+        | :"text-embedding-3-large"
+
+      module Model
+        extend DedalusSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::CreateEmbeddingRequest::model]
+
+        TEXT_EMBEDDING_ADA_002: :"text-embedding-ada-002"
+        TEXT_EMBEDDING_3_SMALL: :"text-embedding-3-small"
+        TEXT_EMBEDDING_3_LARGE: :"text-embedding-3-large"
+      end
+
+      type encoding_format = :float | :base64
+
+      module EncodingFormat
+        extend DedalusSDK::Internal::Type::Enum
+
+        FLOAT: :float
+        BASE64: :base64
+
+        def self?.values: -> ::Array[DedalusSDK::Models::CreateEmbeddingRequest::encoding_format]
+      end
+    end
+  end
+end

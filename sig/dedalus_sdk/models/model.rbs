@@ -1,0 +1,188 @@
+module DedalusSDK
+  module Models
+    type model =
+      {
+        id: String,
+        created_at: Time,
+        provider: DedalusSDK::Models::Model::provider,
+        capabilities: DedalusSDK::Model::Capabilities?,
+        defaults: DedalusSDK::Model::Defaults?,
+        description: String?,
+        display_name: String?,
+        provider_declared_generation_methods: ::Array[String]?,
+        provider_info: ::Hash[Symbol, top]?,
+        version: String?
+      }
+
+    class Model < DedalusSDK::Internal::Type::BaseModel
+      attr_accessor id: String
+
+      attr_accessor created_at: Time
+
+      attr_accessor provider: DedalusSDK::Models::Model::provider
+
+      attr_accessor capabilities: DedalusSDK::Model::Capabilities?
+
+      attr_accessor defaults: DedalusSDK::Model::Defaults?
+
+      attr_accessor description: String?
+
+      attr_accessor display_name: String?
+
+      attr_accessor provider_declared_generation_methods: ::Array[String]?
+
+      attr_accessor provider_info: ::Hash[Symbol, top]?
+
+      attr_accessor version: String?
+
+      def initialize: (
+        id: String,
+        created_at: Time,
+        provider: DedalusSDK::Models::Model::provider,
+        ?capabilities: DedalusSDK::Model::Capabilities?,
+        ?defaults: DedalusSDK::Model::Defaults?,
+        ?description: String?,
+        ?display_name: String?,
+        ?provider_declared_generation_methods: ::Array[String]?,
+        ?provider_info: ::Hash[Symbol, top]?,
+        ?version: String?
+      ) -> void
+
+      def to_hash: -> {
+        id: String,
+        created_at: Time,
+        provider: DedalusSDK::Models::Model::provider,
+        capabilities: DedalusSDK::Model::Capabilities?,
+        defaults: DedalusSDK::Model::Defaults?,
+        description: String?,
+        display_name: String?,
+        provider_declared_generation_methods: ::Array[String]?,
+        provider_info: ::Hash[Symbol, top]?,
+        version: String?
+      }
+
+      type provider =
+        :openai
+        | :anthropic
+        | :google
+        | :xai
+        | :mistral
+        | :groq
+        | :fireworks
+        | :deepseek
+        | :moonshot
+        | :cerebras
+
+      module Provider
+        extend DedalusSDK::Internal::Type::Enum
+
+        OPENAI: :openai
+        ANTHROPIC: :anthropic
+        GOOGLE: :google
+        XAI: :xai
+        MISTRAL: :mistral
+        GROQ: :groq
+        FIREWORKS: :fireworks
+        DEEPSEEK: :deepseek
+        MOONSHOT: :moonshot
+        CEREBRAS: :cerebras
+
+        def self?.values: -> ::Array[DedalusSDK::Models::Model::provider]
+      end
+
+      type capabilities =
+        {
+          audio: bool?,
+          image_generation: bool?,
+          input_token_limit: Integer?,
+          output_token_limit: Integer?,
+          streaming: bool?,
+          structured_output: bool?,
+          text: bool?,
+          thinking: bool?,
+          tools: bool?,
+          vision: bool?
+        }
+
+      class Capabilities < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor audio: bool?
+
+        attr_accessor image_generation: bool?
+
+        attr_accessor input_token_limit: Integer?
+
+        attr_accessor output_token_limit: Integer?
+
+        attr_accessor streaming: bool?
+
+        attr_accessor structured_output: bool?
+
+        attr_accessor text: bool?
+
+        attr_accessor thinking: bool?
+
+        attr_accessor tools: bool?
+
+        attr_accessor vision: bool?
+
+        def initialize: (
+          ?audio: bool?,
+          ?image_generation: bool?,
+          ?input_token_limit: Integer?,
+          ?output_token_limit: Integer?,
+          ?streaming: bool?,
+          ?structured_output: bool?,
+          ?text: bool?,
+          ?thinking: bool?,
+          ?tools: bool?,
+          ?vision: bool?
+        ) -> void
+
+        def to_hash: -> {
+          audio: bool?,
+          image_generation: bool?,
+          input_token_limit: Integer?,
+          output_token_limit: Integer?,
+          streaming: bool?,
+          structured_output: bool?,
+          text: bool?,
+          thinking: bool?,
+          tools: bool?,
+          vision: bool?
+        }
+      end
+
+      type defaults =
+        {
+          max_output_tokens: Integer?,
+          temperature: Float?,
+          top_k: Integer?,
+          top_p: Float?
+        }
+
+      class Defaults < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor max_output_tokens: Integer?
+
+        attr_accessor temperature: Float?
+
+        attr_accessor top_k: Integer?
+
+        attr_accessor top_p: Float?
+
+        def initialize: (
+          ?max_output_tokens: Integer?,
+          ?temperature: Float?,
+          ?top_k: Integer?,
+          ?top_p: Float?
+        ) -> void
+
+        def to_hash: -> {
+          max_output_tokens: Integer?,
+          temperature: Float?,
+          top_k: Integer?,
+          top_p: Float?
+        }
+      end
+    end
+  end
+end

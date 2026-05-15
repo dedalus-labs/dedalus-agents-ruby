@@ -1,0 +1,123 @@
+module DedalusSDK
+  module Models
+    module Audio
+      type translation_create_response =
+        DedalusSDK::Models::Audio::TranslationCreateResponse::CreateTranslationResponseVerboseJSON
+        | DedalusSDK::Models::Audio::TranslationCreateResponse::CreateTranslationResponseJSON
+
+      module TranslationCreateResponse
+        extend DedalusSDK::Internal::Type::Union
+
+        type create_translation_response_verbose_json =
+          {
+            duration: Float,
+            language: String,
+            text: String,
+            segments: ::Array[DedalusSDK::Models::Audio::TranslationCreateResponse::CreateTranslationResponseVerboseJSON::Segment]
+          }
+
+        class CreateTranslationResponseVerboseJSON < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor duration: Float
+
+          attr_accessor language: String
+
+          attr_accessor text: String
+
+          attr_reader segments: ::Array[DedalusSDK::Models::Audio::TranslationCreateResponse::CreateTranslationResponseVerboseJSON::Segment]?
+
+          def segments=: (
+            ::Array[DedalusSDK::Models::Audio::TranslationCreateResponse::CreateTranslationResponseVerboseJSON::Segment]
+          ) -> ::Array[DedalusSDK::Models::Audio::TranslationCreateResponse::CreateTranslationResponseVerboseJSON::Segment]
+
+          def initialize: (
+            duration: Float,
+            language: String,
+            text: String,
+            ?segments: ::Array[DedalusSDK::Models::Audio::TranslationCreateResponse::CreateTranslationResponseVerboseJSON::Segment]
+          ) -> void
+
+          def to_hash: -> {
+            duration: Float,
+            language: String,
+            text: String,
+            segments: ::Array[DedalusSDK::Models::Audio::TranslationCreateResponse::CreateTranslationResponseVerboseJSON::Segment]
+          }
+
+          type segment =
+            {
+              id: Integer,
+              avg_logprob: Float,
+              compression_ratio: Float,
+              end_: Float,
+              no_speech_prob: Float,
+              seek: Integer,
+              start: Float,
+              temperature: Float,
+              text: String,
+              tokens: ::Array[Integer]
+            }
+
+          class Segment < DedalusSDK::Internal::Type::BaseModel
+            attr_accessor id: Integer
+
+            attr_accessor avg_logprob: Float
+
+            attr_accessor compression_ratio: Float
+
+            attr_accessor end_: Float
+
+            attr_accessor no_speech_prob: Float
+
+            attr_accessor seek: Integer
+
+            attr_accessor start: Float
+
+            attr_accessor temperature: Float
+
+            attr_accessor text: String
+
+            attr_accessor tokens: ::Array[Integer]
+
+            def initialize: (
+              id: Integer,
+              avg_logprob: Float,
+              compression_ratio: Float,
+              end_: Float,
+              no_speech_prob: Float,
+              seek: Integer,
+              start: Float,
+              temperature: Float,
+              text: String,
+              tokens: ::Array[Integer]
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              avg_logprob: Float,
+              compression_ratio: Float,
+              end_: Float,
+              no_speech_prob: Float,
+              seek: Integer,
+              start: Float,
+              temperature: Float,
+              text: String,
+              tokens: ::Array[Integer]
+            }
+          end
+        end
+
+        type create_translation_response_json = { text: String }
+
+        class CreateTranslationResponseJSON < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor text: String
+
+          def initialize: (text: String) -> void
+
+          def to_hash: -> { text: String }
+        end
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::Audio::translation_create_response]
+      end
+    end
+  end
+end

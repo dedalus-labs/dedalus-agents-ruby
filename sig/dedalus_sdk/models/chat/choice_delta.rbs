@@ -1,0 +1,84 @@
+module DedalusSDK
+  module Models
+    module Chat
+      type choice_delta =
+        {
+          content: String?,
+          function_call: DedalusSDK::Chat::ChoiceDelta::FunctionCall,
+          refusal: String?,
+          role: DedalusSDK::Models::Chat::ChoiceDelta::role,
+          tool_calls: ::Array[DedalusSDK::Chat::ChoiceDeltaToolCall]
+        }
+
+      class ChoiceDelta < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor content: String?
+
+        attr_reader function_call: DedalusSDK::Chat::ChoiceDelta::FunctionCall?
+
+        def function_call=: (
+          DedalusSDK::Chat::ChoiceDelta::FunctionCall
+        ) -> DedalusSDK::Chat::ChoiceDelta::FunctionCall
+
+        attr_accessor refusal: String?
+
+        attr_reader role: DedalusSDK::Models::Chat::ChoiceDelta::role?
+
+        def role=: (
+          DedalusSDK::Models::Chat::ChoiceDelta::role
+        ) -> DedalusSDK::Models::Chat::ChoiceDelta::role
+
+        attr_reader tool_calls: ::Array[DedalusSDK::Chat::ChoiceDeltaToolCall]?
+
+        def tool_calls=: (
+          ::Array[DedalusSDK::Chat::ChoiceDeltaToolCall]
+        ) -> ::Array[DedalusSDK::Chat::ChoiceDeltaToolCall]
+
+        def initialize: (
+          ?content: String?,
+          ?function_call: DedalusSDK::Chat::ChoiceDelta::FunctionCall,
+          ?refusal: String?,
+          ?role: DedalusSDK::Models::Chat::ChoiceDelta::role,
+          ?tool_calls: ::Array[DedalusSDK::Chat::ChoiceDeltaToolCall]
+        ) -> void
+
+        def to_hash: -> {
+          content: String?,
+          function_call: DedalusSDK::Chat::ChoiceDelta::FunctionCall,
+          refusal: String?,
+          role: DedalusSDK::Models::Chat::ChoiceDelta::role,
+          tool_calls: ::Array[DedalusSDK::Chat::ChoiceDeltaToolCall]
+        }
+
+        type function_call = { arguments: String, name: String }
+
+        class FunctionCall < DedalusSDK::Internal::Type::BaseModel
+          attr_reader arguments: String?
+
+          def arguments=: (String) -> String
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          def initialize: (?arguments: String, ?name: String) -> void
+
+          def to_hash: -> { arguments: String, name: String }
+        end
+
+        type role = :developer | :system | :user | :assistant | :tool
+
+        module Role
+          extend DedalusSDK::Internal::Type::Enum
+
+          DEVELOPER: :developer
+          SYSTEM: :system
+          USER: :user
+          ASSISTANT: :assistant
+          TOOL: :tool
+
+          def self?.values: -> ::Array[DedalusSDK::Models::Chat::ChoiceDelta::role]
+        end
+      end
+    end
+  end
+end

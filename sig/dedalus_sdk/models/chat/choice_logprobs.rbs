@@ -1,0 +1,27 @@
+module DedalusSDK
+  module Models
+    module Chat
+      type choice_logprobs =
+        {
+          content: ::Array[DedalusSDK::Chat::ChatCompletionTokenLogprob]?,
+          refusal: ::Array[DedalusSDK::Chat::ChatCompletionTokenLogprob]?
+        }
+
+      class ChoiceLogprobs < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor content: ::Array[DedalusSDK::Chat::ChatCompletionTokenLogprob]?
+
+        attr_accessor refusal: ::Array[DedalusSDK::Chat::ChatCompletionTokenLogprob]?
+
+        def initialize: (
+          ?content: ::Array[DedalusSDK::Chat::ChatCompletionTokenLogprob]?,
+          ?refusal: ::Array[DedalusSDK::Chat::ChatCompletionTokenLogprob]?
+        ) -> void
+
+        def to_hash: -> {
+          content: ::Array[DedalusSDK::Chat::ChatCompletionTokenLogprob]?,
+          refusal: ::Array[DedalusSDK::Chat::ChatCompletionTokenLogprob]?
+        }
+      end
+    end
+  end
+end

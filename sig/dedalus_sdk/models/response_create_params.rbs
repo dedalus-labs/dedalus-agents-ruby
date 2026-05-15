@@ -1,0 +1,301 @@
+module DedalusSDK
+  module Models
+    type response_create_params =
+      {
+        background: bool?,
+        conversation: DedalusSDK::Models::ResponseCreateParams::conversation?,
+        credentials: DedalusSDK::Models::ResponseCreateParams::credentials?,
+        frequency_penalty: Float?,
+        include: ::Array[String]?,
+        input: DedalusSDK::Models::ResponseCreateParams::input?,
+        instructions: DedalusSDK::Models::ResponseCreateParams::instructions?,
+        max_output_tokens: Integer?,
+        max_tool_calls: Integer?,
+        mcp_servers: DedalusSDK::Models::ResponseCreateParams::mcp_servers?,
+        metadata: ::Hash[Symbol, String]?,
+        model: DedalusSDK::Models::ResponseCreateParams::model?,
+        parallel_tool_calls: bool?,
+        presence_penalty: Float?,
+        previous_response_id: String?,
+        prompt: DedalusSDK::ResponseCreateParams::Prompt?,
+        prompt_cache_key: String?,
+        reasoning: DedalusSDK::Models::json_object_input?,
+        safety_identifier: String?,
+        service_tier: DedalusSDK::Models::ResponseCreateParams::service_tier?,
+        store: bool?,
+        stream: bool,
+        stream_options: DedalusSDK::Models::json_object_input?,
+        temperature: Float?,
+        text: DedalusSDK::Models::json_object_input?,
+        tool_choice: DedalusSDK::Models::ResponseCreateParams::tool_choice?,
+        tools: ::Array[DedalusSDK::Models::json_object_input]?,
+        top_logprobs: Integer?,
+        top_p: Float?,
+        truncation: DedalusSDK::Models::ResponseCreateParams::truncation?,
+        user: String?
+      }
+
+    class ResponseCreateParams < DedalusSDK::Internal::Type::BaseModel
+      attr_accessor background: bool?
+
+      attr_accessor conversation: DedalusSDK::Models::ResponseCreateParams::conversation?
+
+      attr_accessor credentials: DedalusSDK::Models::ResponseCreateParams::credentials?
+
+      attr_accessor frequency_penalty: Float?
+
+      attr_accessor include: ::Array[String]?
+
+      attr_accessor input: DedalusSDK::Models::ResponseCreateParams::input?
+
+      attr_accessor instructions: DedalusSDK::Models::ResponseCreateParams::instructions?
+
+      attr_accessor max_output_tokens: Integer?
+
+      attr_accessor max_tool_calls: Integer?
+
+      attr_accessor mcp_servers: DedalusSDK::Models::ResponseCreateParams::mcp_servers?
+
+      attr_accessor metadata: ::Hash[Symbol, String]?
+
+      attr_accessor model: DedalusSDK::Models::ResponseCreateParams::model?
+
+      attr_accessor parallel_tool_calls: bool?
+
+      attr_accessor presence_penalty: Float?
+
+      attr_accessor previous_response_id: String?
+
+      attr_accessor prompt: DedalusSDK::ResponseCreateParams::Prompt?
+
+      attr_accessor prompt_cache_key: String?
+
+      attr_accessor reasoning: DedalusSDK::Models::json_object_input?
+
+      attr_accessor safety_identifier: String?
+
+      attr_accessor service_tier: DedalusSDK::Models::ResponseCreateParams::service_tier?
+
+      attr_accessor store: bool?
+
+      attr_reader stream: bool?
+
+      def stream=: (bool) -> bool
+
+      attr_accessor stream_options: DedalusSDK::Models::json_object_input?
+
+      attr_accessor temperature: Float?
+
+      attr_accessor text: DedalusSDK::Models::json_object_input?
+
+      attr_accessor tool_choice: DedalusSDK::Models::ResponseCreateParams::tool_choice?
+
+      attr_accessor tools: ::Array[DedalusSDK::Models::json_object_input]?
+
+      attr_accessor top_logprobs: Integer?
+
+      attr_accessor top_p: Float?
+
+      attr_accessor truncation: DedalusSDK::Models::ResponseCreateParams::truncation?
+
+      attr_accessor user: String?
+
+      def initialize: (
+        ?background: bool?,
+        ?conversation: DedalusSDK::Models::ResponseCreateParams::conversation?,
+        ?credentials: DedalusSDK::Models::ResponseCreateParams::credentials?,
+        ?frequency_penalty: Float?,
+        ?include: ::Array[String]?,
+        ?input: DedalusSDK::Models::ResponseCreateParams::input?,
+        ?instructions: DedalusSDK::Models::ResponseCreateParams::instructions?,
+        ?max_output_tokens: Integer?,
+        ?max_tool_calls: Integer?,
+        ?mcp_servers: DedalusSDK::Models::ResponseCreateParams::mcp_servers?,
+        ?metadata: ::Hash[Symbol, String]?,
+        ?model: DedalusSDK::Models::ResponseCreateParams::model?,
+        ?parallel_tool_calls: bool?,
+        ?presence_penalty: Float?,
+        ?previous_response_id: String?,
+        ?prompt: DedalusSDK::ResponseCreateParams::Prompt?,
+        ?prompt_cache_key: String?,
+        ?reasoning: DedalusSDK::Models::json_object_input?,
+        ?safety_identifier: String?,
+        ?service_tier: DedalusSDK::Models::ResponseCreateParams::service_tier?,
+        ?store: bool?,
+        ?stream: bool,
+        ?stream_options: DedalusSDK::Models::json_object_input?,
+        ?temperature: Float?,
+        ?text: DedalusSDK::Models::json_object_input?,
+        ?tool_choice: DedalusSDK::Models::ResponseCreateParams::tool_choice?,
+        ?tools: ::Array[DedalusSDK::Models::json_object_input]?,
+        ?top_logprobs: Integer?,
+        ?top_p: Float?,
+        ?truncation: DedalusSDK::Models::ResponseCreateParams::truncation?,
+        ?user: String?
+      ) -> void
+
+      def to_hash: -> {
+        background: bool?,
+        conversation: DedalusSDK::Models::ResponseCreateParams::conversation?,
+        credentials: DedalusSDK::Models::ResponseCreateParams::credentials?,
+        frequency_penalty: Float?,
+        include: ::Array[String]?,
+        input: DedalusSDK::Models::ResponseCreateParams::input?,
+        instructions: DedalusSDK::Models::ResponseCreateParams::instructions?,
+        max_output_tokens: Integer?,
+        max_tool_calls: Integer?,
+        mcp_servers: DedalusSDK::Models::ResponseCreateParams::mcp_servers?,
+        metadata: ::Hash[Symbol, String]?,
+        model: DedalusSDK::Models::ResponseCreateParams::model?,
+        parallel_tool_calls: bool?,
+        presence_penalty: Float?,
+        previous_response_id: String?,
+        prompt: DedalusSDK::ResponseCreateParams::Prompt?,
+        prompt_cache_key: String?,
+        reasoning: DedalusSDK::Models::json_object_input?,
+        safety_identifier: String?,
+        service_tier: DedalusSDK::Models::ResponseCreateParams::service_tier?,
+        store: bool?,
+        stream: bool,
+        stream_options: DedalusSDK::Models::json_object_input?,
+        temperature: Float?,
+        text: DedalusSDK::Models::json_object_input?,
+        tool_choice: DedalusSDK::Models::ResponseCreateParams::tool_choice?,
+        tools: ::Array[DedalusSDK::Models::json_object_input]?,
+        top_logprobs: Integer?,
+        top_p: Float?,
+        truncation: DedalusSDK::Models::ResponseCreateParams::truncation?,
+        user: String?
+      }
+
+      type conversation =
+        String
+        | DedalusSDK::ResponseCreateParams::Conversation::ResponseConversationParam
+
+      module Conversation
+        extend DedalusSDK::Internal::Type::Union
+
+        type response_conversation_param = { id: String }
+
+        class ResponseConversationParam < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          def initialize: (id: String) -> void
+
+          def to_hash: -> { id: String }
+        end
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::ResponseCreateParams::conversation]
+      end
+
+      type credentials =
+        DedalusSDK::Credential | DedalusSDK::Models::mcp_credentials
+
+      module Credentials
+        extend DedalusSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::ResponseCreateParams::credentials]
+      end
+
+      type input = String | ::Array[DedalusSDK::Models::json_object_input]
+
+      module Input
+        extend DedalusSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::ResponseCreateParams::input]
+
+        JSONObjectInputArray: DedalusSDK::Internal::Type::Converter
+      end
+
+      type instructions =
+        String | ::Array[DedalusSDK::Models::json_object_input]
+
+      module Instructions
+        extend DedalusSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::ResponseCreateParams::instructions]
+
+        JSONObjectInputArray: DedalusSDK::Internal::Type::Converter
+      end
+
+      type mcp_servers =
+        String | DedalusSDK::MCPServerSpec | DedalusSDK::Models::mcp_servers
+
+      module MCPServers
+        extend DedalusSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::ResponseCreateParams::mcp_servers]
+      end
+
+      type model =
+        String
+        | DedalusSDK::DedalusModel
+        | ::Array[DedalusSDK::Models::dedalus_model_choice]
+
+      module Model
+        extend DedalusSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::ResponseCreateParams::model]
+
+        DedalusModelChoiceArray: DedalusSDK::Internal::Type::Converter
+      end
+
+      type prompt =
+        {
+          id: String,
+          variables: DedalusSDK::Models::json_object_input?,
+          version: String?
+        }
+
+      class Prompt < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor variables: DedalusSDK::Models::json_object_input?
+
+        attr_accessor version: String?
+
+        def initialize: (
+          id: String,
+          ?variables: DedalusSDK::Models::json_object_input?,
+          ?version: String?
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          variables: DedalusSDK::Models::json_object_input?,
+          version: String?
+        }
+      end
+
+      type service_tier = :auto | :default
+
+      module ServiceTier
+        extend DedalusSDK::Internal::Type::Enum
+
+        AUTO: :auto
+        DEFAULT: :default
+
+        def self?.values: -> ::Array[DedalusSDK::Models::ResponseCreateParams::service_tier]
+      end
+
+      type tool_choice = String | DedalusSDK::Models::json_object_input
+
+      module ToolChoice
+        extend DedalusSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::ResponseCreateParams::tool_choice]
+      end
+
+      type truncation = :auto | :disabled
+
+      module Truncation
+        extend DedalusSDK::Internal::Type::Enum
+
+        AUTO: :auto
+        DISABLED: :disabled
+
+        def self?.values: -> ::Array[DedalusSDK::Models::ResponseCreateParams::truncation]
+      end
+    end
+  end
+end

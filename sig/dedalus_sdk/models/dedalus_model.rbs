@@ -1,0 +1,18 @@
+module DedalusSDK
+  module Models
+    type dedalus_model = { model: String, settings: DedalusSDK::ModelSettings? }
+
+    class DedalusModel < DedalusSDK::Internal::Type::BaseModel
+      attr_accessor model: String
+
+      attr_accessor settings: DedalusSDK::ModelSettings?
+
+      def initialize: (
+        model: String,
+        ?settings: DedalusSDK::ModelSettings?
+      ) -> void
+
+      def to_hash: -> { model: String, settings: DedalusSDK::ModelSettings? }
+    end
+  end
+end

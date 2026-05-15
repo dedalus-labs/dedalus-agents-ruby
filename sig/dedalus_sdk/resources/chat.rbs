@@ -1,0 +1,9 @@
+module DedalusSDK
+  module Resources
+    class Chat
+      attr_reader completions: DedalusSDK::Resources::Chat::Completions
+
+      def initialize: (client: DedalusSDK::Client) -> void
+    end
+  end
+end

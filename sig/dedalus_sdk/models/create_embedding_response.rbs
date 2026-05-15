@@ -1,0 +1,70 @@
+module DedalusSDK
+  module Models
+    type create_embedding_response =
+      {
+        data: ::Array[DedalusSDK::CreateEmbeddingResponse::Data],
+        model: String,
+        object: :list,
+        usage: DedalusSDK::CreateEmbeddingResponse::Usage
+      }
+
+    class CreateEmbeddingResponse < DedalusSDK::Internal::Type::BaseModel
+      attr_accessor data: ::Array[DedalusSDK::CreateEmbeddingResponse::Data]
+
+      attr_accessor model: String
+
+      attr_accessor object: :list
+
+      attr_accessor usage: DedalusSDK::CreateEmbeddingResponse::Usage
+
+      def initialize: (
+        data: ::Array[DedalusSDK::CreateEmbeddingResponse::Data],
+        model: String,
+        usage: DedalusSDK::CreateEmbeddingResponse::Usage,
+        ?object: :list
+      ) -> void
+
+      def to_hash: -> {
+        data: ::Array[DedalusSDK::CreateEmbeddingResponse::Data],
+        model: String,
+        object: :list,
+        usage: DedalusSDK::CreateEmbeddingResponse::Usage
+      }
+
+      type data =
+        { embedding: ::Array[Float], index: Integer, object: :embedding }
+
+      class Data < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor embedding: ::Array[Float]
+
+        attr_accessor index: Integer
+
+        attr_accessor object: :embedding
+
+        def initialize: (
+          embedding: ::Array[Float],
+          index: Integer,
+          ?object: :embedding
+        ) -> void
+
+        def to_hash: -> {
+          embedding: ::Array[Float],
+          index: Integer,
+          object: :embedding
+        }
+      end
+
+      type usage = { prompt_tokens: Integer, total_tokens: Integer }
+
+      class Usage < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor prompt_tokens: Integer
+
+        attr_accessor total_tokens: Integer
+
+        def initialize: (prompt_tokens: Integer, total_tokens: Integer) -> void
+
+        def to_hash: -> { prompt_tokens: Integer, total_tokens: Integer }
+      end
+    end
+  end
+end

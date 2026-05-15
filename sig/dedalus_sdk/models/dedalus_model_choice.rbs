@@ -1,0 +1,11 @@
+module DedalusSDK
+  module Models
+    type dedalus_model_choice = String | DedalusSDK::DedalusModel
+
+    module DedalusModelChoice
+      extend DedalusSDK::Internal::Type::Union
+
+      def self?.variants: -> ::Array[DedalusSDK::Models::dedalus_model_choice]
+    end
+  end
+end

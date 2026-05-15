@@ -1,0 +1,104 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionAssistantMessageParam = Chat::ChatCompletionAssistantMessageParam
+
+    module Chat
+      type chat_completion_assistant_message_param =
+        {
+          role: :assistant,
+          audio: DedalusSDK::Chat::Audio?,
+          content: DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::content?,
+          function_call: DedalusSDK::Chat::ChatCompletionAssistantMessageParam::FunctionCall?,
+          name: String,
+          refusal: String?,
+          tool_calls: ::Array[DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::tool_call]
+        }
+
+      class ChatCompletionAssistantMessageParam < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor role: :assistant
+
+        attr_accessor audio: DedalusSDK::Chat::Audio?
+
+        attr_accessor content: DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::content?
+
+        attr_accessor function_call: DedalusSDK::Chat::ChatCompletionAssistantMessageParam::FunctionCall?
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_accessor refusal: String?
+
+        attr_reader tool_calls: ::Array[DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::tool_call]?
+
+        def tool_calls=: (
+          ::Array[DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::tool_call]
+        ) -> ::Array[DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::tool_call]
+
+        def initialize: (
+          ?audio: DedalusSDK::Chat::Audio?,
+          ?content: DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::content?,
+          ?function_call: DedalusSDK::Chat::ChatCompletionAssistantMessageParam::FunctionCall?,
+          ?name: String,
+          ?refusal: String?,
+          ?tool_calls: ::Array[DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::tool_call],
+          ?role: :assistant
+        ) -> void
+
+        def to_hash: -> {
+          role: :assistant,
+          audio: DedalusSDK::Chat::Audio?,
+          content: DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::content?,
+          function_call: DedalusSDK::Chat::ChatCompletionAssistantMessageParam::FunctionCall?,
+          name: String,
+          refusal: String?,
+          tool_calls: ::Array[DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::tool_call]
+        }
+
+        type content =
+          String
+          | ::Array[DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::Content::chat_completion_request_assistant_message_content_array]
+
+        module Content
+          extend DedalusSDK::Internal::Type::Union
+
+          type chat_completion_request_assistant_message_content_array =
+            DedalusSDK::Chat::ChatCompletionContentPartTextParam
+            | DedalusSDK::Chat::ChatCompletionContentPartRefusalParam
+
+          module ChatCompletionRequestAssistantMessageContentArray
+            extend DedalusSDK::Internal::Type::Union
+
+            def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::Content::chat_completion_request_assistant_message_content_array]
+          end
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::content]
+
+          ChatCompletionRequestAssistantMessageContent2DArray: DedalusSDK::Internal::Type::Converter
+        end
+
+        type function_call = { arguments: String, name: String }
+
+        class FunctionCall < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor arguments: String
+
+          attr_accessor name: String
+
+          def initialize: (arguments: String, name: String) -> void
+
+          def to_hash: -> { arguments: String, name: String }
+        end
+
+        type tool_call =
+          DedalusSDK::Chat::ChatCompletionMessageToolCall
+          | DedalusSDK::Chat::ChatCompletionMessageCustomToolCall
+
+        module ToolCall
+          extend DedalusSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionAssistantMessageParam::tool_call]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,47 @@
+module DedalusSDK
+  module Resources
+    class Images
+      def create_variation: (
+        image: DedalusSDK::Internal::file_input,
+        ?model: String?,
+        ?n: Integer?,
+        ?response_format: String?,
+        ?size: String?,
+        ?user: String?,
+        ?request_options: DedalusSDK::request_opts
+      ) -> DedalusSDK::ImagesResponse
+
+      def edit: (
+        image: DedalusSDK::Internal::file_input,
+        prompt: String,
+        ?mask: DedalusSDK::Internal::file_input?,
+        ?model: String?,
+        ?n: Integer?,
+        ?response_format: String?,
+        ?size: String?,
+        ?user: String?,
+        ?request_options: DedalusSDK::request_opts
+      ) -> DedalusSDK::ImagesResponse
+
+      def generate: (
+        prompt: String,
+        ?background: DedalusSDK::Models::CreateImageRequest::background?,
+        ?model: String?,
+        ?moderation: DedalusSDK::Models::CreateImageRequest::moderation?,
+        ?n: Integer?,
+        ?output_compression: Integer?,
+        ?output_format: DedalusSDK::Models::CreateImageRequest::output_format?,
+        ?partial_images: Integer?,
+        ?quality: DedalusSDK::Models::CreateImageRequest::quality?,
+        ?response_format: DedalusSDK::Models::CreateImageRequest::response_format?,
+        ?size: DedalusSDK::Models::CreateImageRequest::size?,
+        ?stream: bool?,
+        ?style: DedalusSDK::Models::CreateImageRequest::style?,
+        ?user: String?,
+        ?request_options: DedalusSDK::request_opts
+      ) -> DedalusSDK::ImagesResponse
+
+      def initialize: (client: DedalusSDK::Client) -> void
+    end
+  end
+end

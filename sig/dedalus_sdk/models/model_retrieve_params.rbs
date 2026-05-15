@@ -1,0 +1,23 @@
+module DedalusSDK
+  module Models
+    type model_retrieve_params =
+      { model_id: String } & DedalusSDK::Internal::Type::request_parameters
+
+    class ModelRetrieveParams < DedalusSDK::Internal::Type::BaseModel
+      extend DedalusSDK::Internal::Type::RequestParameters::Converter
+      include DedalusSDK::Internal::Type::RequestParameters
+
+      attr_accessor model_id: String
+
+      def initialize: (
+        model_id: String,
+        ?request_options: DedalusSDK::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        model_id: String,
+        request_options: DedalusSDK::RequestOptions
+      }
+    end
+  end
+end

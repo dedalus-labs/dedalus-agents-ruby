@@ -1,0 +1,15 @@
+module DedalusSDK
+  module Models
+    type mcp_server_item = String | DedalusSDK::MCPServerSpec
+
+    module MCPServerItem
+      extend DedalusSDK::Internal::Type::Union
+
+      def self?.variants: -> ::Array[DedalusSDK::Models::mcp_server_item]
+    end
+
+    type mcp_servers = ::Array[DedalusSDK::Models::mcp_server_item]
+
+    MCPServers: DedalusSDK::Internal::Type::Converter
+  end
+end

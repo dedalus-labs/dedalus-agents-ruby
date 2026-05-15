@@ -1,0 +1,16 @@
+module DedalusSDK
+  module Resources
+    class Models
+      def retrieve: (
+        String model_id,
+        ?request_options: DedalusSDK::request_opts
+      ) -> DedalusSDK::Model
+
+      def list: (
+        ?request_options: DedalusSDK::request_opts
+      ) -> DedalusSDK::ListModelsResponse
+
+      def initialize: (client: DedalusSDK::Client) -> void
+    end
+  end
+end

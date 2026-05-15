@@ -1,0 +1,57 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionContentPartFileParam = Chat::ChatCompletionContentPartFileParam
+
+    module Chat
+      type chat_completion_content_part_file_param =
+        {
+          file: DedalusSDK::Chat::ChatCompletionContentPartFileParam::File,
+          type: :file
+        }
+
+      class ChatCompletionContentPartFileParam < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor file: DedalusSDK::Chat::ChatCompletionContentPartFileParam::File
+
+        attr_accessor type: :file
+
+        def initialize: (
+          file: DedalusSDK::Chat::ChatCompletionContentPartFileParam::File,
+          ?type: :file
+        ) -> void
+
+        def to_hash: -> {
+          file: DedalusSDK::Chat::ChatCompletionContentPartFileParam::File,
+          type: :file
+        }
+
+        type file = { file_data: String, file_id: String, filename: String }
+
+        class File < DedalusSDK::Internal::Type::BaseModel
+          attr_reader file_data: String?
+
+          def file_data=: (String) -> String
+
+          attr_reader file_id: String?
+
+          def file_id=: (String) -> String
+
+          attr_reader filename: String?
+
+          def filename=: (String) -> String
+
+          def initialize: (
+            ?file_data: String,
+            ?file_id: String,
+            ?filename: String
+          ) -> void
+
+          def to_hash: -> {
+            file_data: String,
+            file_id: String,
+            filename: String
+          }
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,35 @@
+module DedalusSDK
+  module Models
+    type tool_choice =
+      :auto
+      | :required
+      | :none
+      | String
+      | ::Hash[Symbol, top]
+      | DedalusSDK::ToolChoice::MCPToolChoice
+
+    module ToolChoice
+      extend DedalusSDK::Internal::Type::Union
+
+      type mcp_tool_choice = { name: String, server_label: String }
+
+      class MCPToolChoice < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor name: String
+
+        attr_accessor server_label: String
+
+        def initialize: (name: String, server_label: String) -> void
+
+        def to_hash: -> { name: String, server_label: String }
+      end
+
+      def self?.variants: -> ::Array[DedalusSDK::Models::tool_choice]
+
+      AUTO: :auto
+      REQUIRED: :required
+      NONE: :none
+
+      UnionMember2Map: DedalusSDK::Internal::Type::Converter
+    end
+  end
+end

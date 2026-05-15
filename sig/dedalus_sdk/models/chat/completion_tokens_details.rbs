@@ -1,0 +1,45 @@
+module DedalusSDK
+  module Models
+    module Chat
+      type completion_tokens_details =
+        {
+          accepted_prediction_tokens: Integer,
+          audio_tokens: Integer,
+          reasoning_tokens: Integer,
+          rejected_prediction_tokens: Integer
+        }
+
+      class CompletionTokensDetails < DedalusSDK::Internal::Type::BaseModel
+        attr_reader accepted_prediction_tokens: Integer?
+
+        def accepted_prediction_tokens=: (Integer) -> Integer
+
+        attr_reader audio_tokens: Integer?
+
+        def audio_tokens=: (Integer) -> Integer
+
+        attr_reader reasoning_tokens: Integer?
+
+        def reasoning_tokens=: (Integer) -> Integer
+
+        attr_reader rejected_prediction_tokens: Integer?
+
+        def rejected_prediction_tokens=: (Integer) -> Integer
+
+        def initialize: (
+          ?accepted_prediction_tokens: Integer,
+          ?audio_tokens: Integer,
+          ?reasoning_tokens: Integer,
+          ?rejected_prediction_tokens: Integer
+        ) -> void
+
+        def to_hash: -> {
+          accepted_prediction_tokens: Integer,
+          audio_tokens: Integer,
+          reasoning_tokens: Integer,
+          rejected_prediction_tokens: Integer
+        }
+      end
+    end
+  end
+end

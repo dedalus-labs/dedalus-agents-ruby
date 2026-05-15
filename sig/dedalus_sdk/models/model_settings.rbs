@@ -1,0 +1,295 @@
+module DedalusSDK
+  module Models
+    type model_settings =
+      {
+        attributes: ::Hash[Symbol, top],
+        audio: DedalusSDK::Models::json_object_input?,
+        deferred: bool?,
+        extra_args: ::Hash[Symbol, top]?,
+        extra_headers: ::Hash[Symbol, String]?,
+        extra_query: ::Hash[Symbol, top]?,
+        frequency_penalty: Float?,
+        generation_config: DedalusSDK::Models::json_object_input?,
+        include_usage: bool?,
+        input_audio_format: String?,
+        input_audio_transcription: DedalusSDK::Models::json_object_input?,
+        logit_bias: ::Hash[Symbol, Integer]?,
+        logprobs: bool?,
+        max_completion_tokens: Integer?,
+        max_tokens: Integer?,
+        metadata: ::Hash[Symbol, String]?,
+        modalities: ::Array[String]?,
+        n: Integer?,
+        output_audio_format: String?,
+        parallel_tool_calls: bool?,
+        prediction: DedalusSDK::Models::json_object_input?,
+        presence_penalty: Float?,
+        prompt_cache_key: String?,
+        reasoning: DedalusSDK::Reasoning?,
+        reasoning_effort: String?,
+        response_format: DedalusSDK::Models::json_object_input?,
+        safety_identifier: String?,
+        safety_settings: ::Array[DedalusSDK::Models::json_object_input]?,
+        search_parameters: DedalusSDK::Models::json_object_input?,
+        seed: Integer?,
+        service_tier: String?,
+        stop: DedalusSDK::Models::ModelSettings::stop?,
+        store: bool?,
+        stream: bool?,
+        stream_options: DedalusSDK::Models::json_object_input?,
+        structured_output: top,
+        system_instruction: DedalusSDK::Models::json_object_input?,
+        temperature: Float?,
+        thinking: DedalusSDK::Models::json_object_input?,
+        timeout: Float?,
+        tool_choice: DedalusSDK::Models::tool_choice?,
+        tool_config: DedalusSDK::Models::json_object_input?,
+        top_k: Integer?,
+        top_logprobs: Integer?,
+        top_p: Float?,
+        truncation: DedalusSDK::Models::ModelSettings::truncation?,
+        turn_detection: DedalusSDK::Models::json_object_input?,
+        user: String?,
+        verbosity: String?,
+        voice: String?,
+        web_search_options: DedalusSDK::Models::json_object_input?
+      }
+
+    class ModelSettings < DedalusSDK::Internal::Type::BaseModel
+      attr_reader attributes: ::Hash[Symbol, top]?
+
+      def attributes=: (::Hash[Symbol, top]) -> ::Hash[Symbol, top]
+
+      attr_accessor audio: DedalusSDK::Models::json_object_input?
+
+      attr_accessor deferred: bool?
+
+      attr_accessor extra_args: ::Hash[Symbol, top]?
+
+      attr_accessor extra_headers: ::Hash[Symbol, String]?
+
+      attr_accessor extra_query: ::Hash[Symbol, top]?
+
+      attr_accessor frequency_penalty: Float?
+
+      attr_accessor generation_config: DedalusSDK::Models::json_object_input?
+
+      attr_accessor include_usage: bool?
+
+      attr_accessor input_audio_format: String?
+
+      attr_accessor input_audio_transcription: DedalusSDK::Models::json_object_input?
+
+      attr_accessor logit_bias: ::Hash[Symbol, Integer]?
+
+      attr_accessor logprobs: bool?
+
+      attr_accessor max_completion_tokens: Integer?
+
+      attr_accessor max_tokens: Integer?
+
+      attr_accessor metadata: ::Hash[Symbol, String]?
+
+      attr_accessor modalities: ::Array[String]?
+
+      attr_accessor n: Integer?
+
+      attr_accessor output_audio_format: String?
+
+      attr_accessor parallel_tool_calls: bool?
+
+      attr_accessor prediction: DedalusSDK::Models::json_object_input?
+
+      attr_accessor presence_penalty: Float?
+
+      attr_accessor prompt_cache_key: String?
+
+      attr_accessor reasoning: DedalusSDK::Reasoning?
+
+      attr_accessor reasoning_effort: String?
+
+      attr_accessor response_format: DedalusSDK::Models::json_object_input?
+
+      attr_accessor safety_identifier: String?
+
+      attr_accessor safety_settings: ::Array[DedalusSDK::Models::json_object_input]?
+
+      attr_accessor search_parameters: DedalusSDK::Models::json_object_input?
+
+      attr_accessor seed: Integer?
+
+      attr_accessor service_tier: String?
+
+      attr_accessor stop: DedalusSDK::Models::ModelSettings::stop?
+
+      attr_accessor store: bool?
+
+      attr_accessor stream: bool?
+
+      attr_accessor stream_options: DedalusSDK::Models::json_object_input?
+
+      attr_reader structured_output: top?
+
+      def structured_output=: (top) -> top
+
+      attr_accessor system_instruction: DedalusSDK::Models::json_object_input?
+
+      attr_accessor temperature: Float?
+
+      attr_accessor thinking: DedalusSDK::Models::json_object_input?
+
+      attr_accessor timeout: Float?
+
+      attr_accessor tool_choice: DedalusSDK::Models::tool_choice?
+
+      attr_accessor tool_config: DedalusSDK::Models::json_object_input?
+
+      attr_accessor top_k: Integer?
+
+      attr_accessor top_logprobs: Integer?
+
+      attr_accessor top_p: Float?
+
+      attr_accessor truncation: DedalusSDK::Models::ModelSettings::truncation?
+
+      attr_accessor turn_detection: DedalusSDK::Models::json_object_input?
+
+      attr_accessor user: String?
+
+      attr_accessor verbosity: String?
+
+      attr_accessor voice: String?
+
+      attr_accessor web_search_options: DedalusSDK::Models::json_object_input?
+
+      def initialize: (
+        ?attributes: ::Hash[Symbol, top],
+        ?audio: DedalusSDK::Models::json_object_input?,
+        ?deferred: bool?,
+        ?extra_args: ::Hash[Symbol, top]?,
+        ?extra_headers: ::Hash[Symbol, String]?,
+        ?extra_query: ::Hash[Symbol, top]?,
+        ?frequency_penalty: Float?,
+        ?generation_config: DedalusSDK::Models::json_object_input?,
+        ?include_usage: bool?,
+        ?input_audio_format: String?,
+        ?input_audio_transcription: DedalusSDK::Models::json_object_input?,
+        ?logit_bias: ::Hash[Symbol, Integer]?,
+        ?logprobs: bool?,
+        ?max_completion_tokens: Integer?,
+        ?max_tokens: Integer?,
+        ?metadata: ::Hash[Symbol, String]?,
+        ?modalities: ::Array[String]?,
+        ?n: Integer?,
+        ?output_audio_format: String?,
+        ?parallel_tool_calls: bool?,
+        ?prediction: DedalusSDK::Models::json_object_input?,
+        ?presence_penalty: Float?,
+        ?prompt_cache_key: String?,
+        ?reasoning: DedalusSDK::Reasoning?,
+        ?reasoning_effort: String?,
+        ?response_format: DedalusSDK::Models::json_object_input?,
+        ?safety_identifier: String?,
+        ?safety_settings: ::Array[DedalusSDK::Models::json_object_input]?,
+        ?search_parameters: DedalusSDK::Models::json_object_input?,
+        ?seed: Integer?,
+        ?service_tier: String?,
+        ?stop: DedalusSDK::Models::ModelSettings::stop?,
+        ?store: bool?,
+        ?stream: bool?,
+        ?stream_options: DedalusSDK::Models::json_object_input?,
+        ?structured_output: top,
+        ?system_instruction: DedalusSDK::Models::json_object_input?,
+        ?temperature: Float?,
+        ?thinking: DedalusSDK::Models::json_object_input?,
+        ?timeout: Float?,
+        ?tool_choice: DedalusSDK::Models::tool_choice?,
+        ?tool_config: DedalusSDK::Models::json_object_input?,
+        ?top_k: Integer?,
+        ?top_logprobs: Integer?,
+        ?top_p: Float?,
+        ?truncation: DedalusSDK::Models::ModelSettings::truncation?,
+        ?turn_detection: DedalusSDK::Models::json_object_input?,
+        ?user: String?,
+        ?verbosity: String?,
+        ?voice: String?,
+        ?web_search_options: DedalusSDK::Models::json_object_input?
+      ) -> void
+
+      def to_hash: -> {
+        attributes: ::Hash[Symbol, top],
+        audio: DedalusSDK::Models::json_object_input?,
+        deferred: bool?,
+        extra_args: ::Hash[Symbol, top]?,
+        extra_headers: ::Hash[Symbol, String]?,
+        extra_query: ::Hash[Symbol, top]?,
+        frequency_penalty: Float?,
+        generation_config: DedalusSDK::Models::json_object_input?,
+        include_usage: bool?,
+        input_audio_format: String?,
+        input_audio_transcription: DedalusSDK::Models::json_object_input?,
+        logit_bias: ::Hash[Symbol, Integer]?,
+        logprobs: bool?,
+        max_completion_tokens: Integer?,
+        max_tokens: Integer?,
+        metadata: ::Hash[Symbol, String]?,
+        modalities: ::Array[String]?,
+        n: Integer?,
+        output_audio_format: String?,
+        parallel_tool_calls: bool?,
+        prediction: DedalusSDK::Models::json_object_input?,
+        presence_penalty: Float?,
+        prompt_cache_key: String?,
+        reasoning: DedalusSDK::Reasoning?,
+        reasoning_effort: String?,
+        response_format: DedalusSDK::Models::json_object_input?,
+        safety_identifier: String?,
+        safety_settings: ::Array[DedalusSDK::Models::json_object_input]?,
+        search_parameters: DedalusSDK::Models::json_object_input?,
+        seed: Integer?,
+        service_tier: String?,
+        stop: DedalusSDK::Models::ModelSettings::stop?,
+        store: bool?,
+        stream: bool?,
+        stream_options: DedalusSDK::Models::json_object_input?,
+        structured_output: top,
+        system_instruction: DedalusSDK::Models::json_object_input?,
+        temperature: Float?,
+        thinking: DedalusSDK::Models::json_object_input?,
+        timeout: Float?,
+        tool_choice: DedalusSDK::Models::tool_choice?,
+        tool_config: DedalusSDK::Models::json_object_input?,
+        top_k: Integer?,
+        top_logprobs: Integer?,
+        top_p: Float?,
+        truncation: DedalusSDK::Models::ModelSettings::truncation?,
+        turn_detection: DedalusSDK::Models::json_object_input?,
+        user: String?,
+        verbosity: String?,
+        voice: String?,
+        web_search_options: DedalusSDK::Models::json_object_input?
+      }
+
+      type stop = String | ::Array[String]
+
+      module Stop
+        extend DedalusSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[DedalusSDK::Models::ModelSettings::stop]
+
+        StringArray: DedalusSDK::Internal::Type::Converter
+      end
+
+      type truncation = :auto | :disabled
+
+      module Truncation
+        extend DedalusSDK::Internal::Type::Enum
+
+        AUTO: :auto
+        DISABLED: :disabled
+
+        def self?.values: -> ::Array[DedalusSDK::Models::ModelSettings::truncation]
+      end
+    end
+  end
+end

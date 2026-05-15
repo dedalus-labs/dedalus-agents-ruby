@@ -1,0 +1,176 @@
+module DedalusSDK
+  module Models
+    class ChatCompletion = Chat::ChatCompletion
+
+    module Chat
+      type chat_completion =
+        {
+          id: String,
+          choices: ::Array[DedalusSDK::Chat::Choice],
+          created: Integer,
+          model: String,
+          object: :"chat.completion",
+          correlation_id: String?,
+          deferred: ::Array[DedalusSDK::Chat::DeferredCallResponse]?,
+          mcp_server_errors: ::Hash[Symbol, DedalusSDK::Chat::ChatCompletion::MCPServerError]?,
+          mcp_tool_results: ::Array[DedalusSDK::MCPToolResult]?,
+          pending_tools: ::Array[DedalusSDK::Chat::ChatCompletion::PendingTool]?,
+          server_results: ::Hash[Symbol, DedalusSDK::Models::json_value_input?]?,
+          service_tier: DedalusSDK::Models::Chat::ChatCompletion::service_tier?,
+          system_fingerprint: String,
+          tools_executed: ::Array[String]?,
+          turns_consumed: Integer?,
+          usage: DedalusSDK::Chat::CompletionUsage
+        }
+
+      class ChatCompletion < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor choices: ::Array[DedalusSDK::Chat::Choice]
+
+        attr_accessor created: Integer
+
+        attr_accessor model: String
+
+        attr_accessor object: :"chat.completion"
+
+        attr_accessor correlation_id: String?
+
+        attr_accessor deferred: ::Array[DedalusSDK::Chat::DeferredCallResponse]?
+
+        attr_accessor mcp_server_errors: ::Hash[Symbol, DedalusSDK::Chat::ChatCompletion::MCPServerError]?
+
+        attr_accessor mcp_tool_results: ::Array[DedalusSDK::MCPToolResult]?
+
+        attr_accessor pending_tools: ::Array[DedalusSDK::Chat::ChatCompletion::PendingTool]?
+
+        attr_accessor server_results: ::Hash[Symbol, DedalusSDK::Models::json_value_input?]?
+
+        attr_accessor service_tier: DedalusSDK::Models::Chat::ChatCompletion::service_tier?
+
+        attr_reader system_fingerprint: String?
+
+        def system_fingerprint=: (String) -> String
+
+        attr_accessor tools_executed: ::Array[String]?
+
+        attr_accessor turns_consumed: Integer?
+
+        attr_reader usage: DedalusSDK::Chat::CompletionUsage?
+
+        def usage=: (
+          DedalusSDK::Chat::CompletionUsage
+        ) -> DedalusSDK::Chat::CompletionUsage
+
+        def initialize: (
+          id: String,
+          choices: ::Array[DedalusSDK::Chat::Choice],
+          created: Integer,
+          model: String,
+          ?correlation_id: String?,
+          ?deferred: ::Array[DedalusSDK::Chat::DeferredCallResponse]?,
+          ?mcp_server_errors: ::Hash[Symbol, DedalusSDK::Chat::ChatCompletion::MCPServerError]?,
+          ?mcp_tool_results: ::Array[DedalusSDK::MCPToolResult]?,
+          ?pending_tools: ::Array[DedalusSDK::Chat::ChatCompletion::PendingTool]?,
+          ?server_results: ::Hash[Symbol, DedalusSDK::Models::json_value_input?]?,
+          ?service_tier: DedalusSDK::Models::Chat::ChatCompletion::service_tier?,
+          ?system_fingerprint: String,
+          ?tools_executed: ::Array[String]?,
+          ?turns_consumed: Integer?,
+          ?usage: DedalusSDK::Chat::CompletionUsage,
+          ?object: :"chat.completion"
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          choices: ::Array[DedalusSDK::Chat::Choice],
+          created: Integer,
+          model: String,
+          object: :"chat.completion",
+          correlation_id: String?,
+          deferred: ::Array[DedalusSDK::Chat::DeferredCallResponse]?,
+          mcp_server_errors: ::Hash[Symbol, DedalusSDK::Chat::ChatCompletion::MCPServerError]?,
+          mcp_tool_results: ::Array[DedalusSDK::MCPToolResult]?,
+          pending_tools: ::Array[DedalusSDK::Chat::ChatCompletion::PendingTool]?,
+          server_results: ::Hash[Symbol, DedalusSDK::Models::json_value_input?]?,
+          service_tier: DedalusSDK::Models::Chat::ChatCompletion::service_tier?,
+          system_fingerprint: String,
+          tools_executed: ::Array[String]?,
+          turns_consumed: Integer?,
+          usage: DedalusSDK::Chat::CompletionUsage
+        }
+
+        type mcp_server_error =
+          { message: String, code: String?, recommendation: String? }
+
+        class MCPServerError < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor message: String
+
+          attr_accessor code: String?
+
+          attr_accessor recommendation: String?
+
+          def initialize: (
+            message: String,
+            ?code: String?,
+            ?recommendation: String?
+          ) -> void
+
+          def to_hash: -> {
+            message: String,
+            code: String?,
+            recommendation: String?
+          }
+        end
+
+        type pending_tool =
+          {
+            id: String,
+            arguments: DedalusSDK::Models::json_object_input,
+            name: String,
+            dependencies: ::Array[String]
+          }
+
+        class PendingTool < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor arguments: DedalusSDK::Models::json_object_input
+
+          attr_accessor name: String
+
+          attr_reader dependencies: ::Array[String]?
+
+          def dependencies=: (::Array[String]) -> ::Array[String]
+
+          def initialize: (
+            id: String,
+            arguments: DedalusSDK::Models::json_object_input,
+            name: String,
+            ?dependencies: ::Array[String]
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            arguments: DedalusSDK::Models::json_object_input,
+            name: String,
+            dependencies: ::Array[String]
+          }
+        end
+
+        type service_tier = :auto | :default | :flex | :scale | :priority
+
+        module ServiceTier
+          extend DedalusSDK::Internal::Type::Enum
+
+          AUTO: :auto
+          DEFAULT: :default
+          FLEX: :flex
+          SCALE: :scale
+          PRIORITY: :priority
+
+          def self?.values: -> ::Array[DedalusSDK::Models::Chat::ChatCompletion::service_tier]
+        end
+      end
+    end
+  end
+end

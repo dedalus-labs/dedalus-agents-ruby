@@ -1,0 +1,15 @@
+module DedalusSDK
+  module Models
+    module Chat
+      type tool_choice_none = { type: :none }
+
+      class ToolChoiceNone < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor type: :none
+
+        def initialize: (?type: :none) -> void
+
+        def to_hash: -> { type: :none }
+      end
+    end
+  end
+end

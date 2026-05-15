@@ -1,0 +1,42 @@
+module DedalusSDK
+  module Resources
+    class Responses
+      def create: (
+        ?background: bool?,
+        ?conversation: DedalusSDK::Models::ResponseCreateParams::conversation?,
+        ?credentials: DedalusSDK::Models::ResponseCreateParams::credentials?,
+        ?frequency_penalty: Float?,
+        ?include: ::Array[String]?,
+        ?input: DedalusSDK::Models::ResponseCreateParams::input?,
+        ?instructions: DedalusSDK::Models::ResponseCreateParams::instructions?,
+        ?max_output_tokens: Integer?,
+        ?max_tool_calls: Integer?,
+        ?mcp_servers: DedalusSDK::Models::ResponseCreateParams::mcp_servers?,
+        ?metadata: ::Hash[Symbol, String]?,
+        ?model: DedalusSDK::Models::ResponseCreateParams::model?,
+        ?parallel_tool_calls: bool?,
+        ?presence_penalty: Float?,
+        ?previous_response_id: String?,
+        ?prompt: DedalusSDK::ResponseCreateParams::Prompt?,
+        ?prompt_cache_key: String?,
+        ?reasoning: DedalusSDK::Models::json_object_input?,
+        ?safety_identifier: String?,
+        ?service_tier: DedalusSDK::Models::ResponseCreateParams::service_tier?,
+        ?store: bool?,
+        ?stream: bool,
+        ?stream_options: DedalusSDK::Models::json_object_input?,
+        ?temperature: Float?,
+        ?text: DedalusSDK::Models::json_object_input?,
+        ?tool_choice: DedalusSDK::Models::ResponseCreateParams::tool_choice?,
+        ?tools: ::Array[DedalusSDK::Models::json_object_input]?,
+        ?top_logprobs: Integer?,
+        ?top_p: Float?,
+        ?truncation: DedalusSDK::Models::ResponseCreateParams::truncation?,
+        ?user: String?,
+        ?request_options: DedalusSDK::request_opts
+      ) -> DedalusSDK::Response
+
+      def initialize: (client: DedalusSDK::Client) -> void
+    end
+  end
+end

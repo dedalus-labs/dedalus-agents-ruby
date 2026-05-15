@@ -1,0 +1,169 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionMessage = Chat::ChatCompletionMessage
+
+    module Chat
+      type chat_completion_message =
+        {
+          content: String?,
+          refusal: String?,
+          role: :assistant,
+          annotations: ::Array[DedalusSDK::Chat::ChatCompletionMessage::Annotation],
+          audio: DedalusSDK::Chat::ChatCompletionMessage::Audio?,
+          function_call: DedalusSDK::Chat::ChatCompletionMessage::FunctionCall,
+          tool_calls: ::Array[DedalusSDK::Models::Chat::ChatCompletionMessage::tool_call]
+        }
+
+      class ChatCompletionMessage < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor content: String?
+
+        attr_accessor refusal: String?
+
+        attr_accessor role: :assistant
+
+        attr_reader annotations: ::Array[DedalusSDK::Chat::ChatCompletionMessage::Annotation]?
+
+        def annotations=: (
+          ::Array[DedalusSDK::Chat::ChatCompletionMessage::Annotation]
+        ) -> ::Array[DedalusSDK::Chat::ChatCompletionMessage::Annotation]
+
+        attr_accessor audio: DedalusSDK::Chat::ChatCompletionMessage::Audio?
+
+        attr_reader function_call: DedalusSDK::Chat::ChatCompletionMessage::FunctionCall?
+
+        def function_call=: (
+          DedalusSDK::Chat::ChatCompletionMessage::FunctionCall
+        ) -> DedalusSDK::Chat::ChatCompletionMessage::FunctionCall
+
+        attr_reader tool_calls: ::Array[DedalusSDK::Models::Chat::ChatCompletionMessage::tool_call]?
+
+        def tool_calls=: (
+          ::Array[DedalusSDK::Models::Chat::ChatCompletionMessage::tool_call]
+        ) -> ::Array[DedalusSDK::Models::Chat::ChatCompletionMessage::tool_call]
+
+        def initialize: (
+          content: String?,
+          refusal: String?,
+          ?annotations: ::Array[DedalusSDK::Chat::ChatCompletionMessage::Annotation],
+          ?audio: DedalusSDK::Chat::ChatCompletionMessage::Audio?,
+          ?function_call: DedalusSDK::Chat::ChatCompletionMessage::FunctionCall,
+          ?tool_calls: ::Array[DedalusSDK::Models::Chat::ChatCompletionMessage::tool_call],
+          ?role: :assistant
+        ) -> void
+
+        def to_hash: -> {
+          content: String?,
+          refusal: String?,
+          role: :assistant,
+          annotations: ::Array[DedalusSDK::Chat::ChatCompletionMessage::Annotation],
+          audio: DedalusSDK::Chat::ChatCompletionMessage::Audio?,
+          function_call: DedalusSDK::Chat::ChatCompletionMessage::FunctionCall,
+          tool_calls: ::Array[DedalusSDK::Models::Chat::ChatCompletionMessage::tool_call]
+        }
+
+        type annotation =
+          {
+            type: :url_citation,
+            url_citation: DedalusSDK::Chat::ChatCompletionMessage::Annotation::URLCitation
+          }
+
+        class Annotation < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor type: :url_citation
+
+          attr_accessor url_citation: DedalusSDK::Chat::ChatCompletionMessage::Annotation::URLCitation
+
+          def initialize: (
+            url_citation: DedalusSDK::Chat::ChatCompletionMessage::Annotation::URLCitation,
+            ?type: :url_citation
+          ) -> void
+
+          def to_hash: -> {
+            type: :url_citation,
+            url_citation: DedalusSDK::Chat::ChatCompletionMessage::Annotation::URLCitation
+          }
+
+          type url_citation =
+            {
+              end_index: Integer,
+              start_index: Integer,
+              title: String,
+              url: String
+            }
+
+          class URLCitation < DedalusSDK::Internal::Type::BaseModel
+            attr_accessor end_index: Integer
+
+            attr_accessor start_index: Integer
+
+            attr_accessor title: String
+
+            attr_accessor url: String
+
+            def initialize: (
+              end_index: Integer,
+              start_index: Integer,
+              title: String,
+              url: String
+            ) -> void
+
+            def to_hash: -> {
+              end_index: Integer,
+              start_index: Integer,
+              title: String,
+              url: String
+            }
+          end
+        end
+
+        type audio =
+          { id: String, data: String, expires_at: Integer, transcript: String }
+
+        class Audio < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor id: String
+
+          attr_accessor data: String
+
+          attr_accessor expires_at: Integer
+
+          attr_accessor transcript: String
+
+          def initialize: (
+            id: String,
+            data: String,
+            expires_at: Integer,
+            transcript: String
+          ) -> void
+
+          def to_hash: -> {
+            id: String,
+            data: String,
+            expires_at: Integer,
+            transcript: String
+          }
+        end
+
+        type function_call = { arguments: String, name: String }
+
+        class FunctionCall < DedalusSDK::Internal::Type::BaseModel
+          attr_accessor arguments: String
+
+          attr_accessor name: String
+
+          def initialize: (arguments: String, name: String) -> void
+
+          def to_hash: -> { arguments: String, name: String }
+        end
+
+        type tool_call =
+          DedalusSDK::Chat::ChatCompletionMessageToolCall
+          | DedalusSDK::Chat::ChatCompletionMessageCustomToolCall
+
+        module ToolCall
+          extend DedalusSDK::Internal::Type::Union
+
+          def self?.variants: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionMessage::tool_call]
+        end
+      end
+    end
+  end
+end

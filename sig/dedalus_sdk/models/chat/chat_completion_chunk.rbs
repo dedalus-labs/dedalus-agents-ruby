@@ -1,0 +1,75 @@
+module DedalusSDK
+  module Models
+    class ChatCompletionChunk = Chat::ChatCompletionChunk
+
+    module Chat
+      type chat_completion_chunk =
+        {
+          id: String,
+          choices: ::Array[DedalusSDK::Chat::StreamChoice],
+          created: Integer,
+          model: String,
+          object: :"chat.completion.chunk",
+          service_tier: DedalusSDK::Models::Chat::ChatCompletionChunk::service_tier?,
+          system_fingerprint: String,
+          usage: DedalusSDK::Chat::CompletionUsage?
+        }
+
+      class ChatCompletionChunk < DedalusSDK::Internal::Type::BaseModel
+        attr_accessor id: String
+
+        attr_accessor choices: ::Array[DedalusSDK::Chat::StreamChoice]
+
+        attr_accessor created: Integer
+
+        attr_accessor model: String
+
+        attr_accessor object: :"chat.completion.chunk"
+
+        attr_accessor service_tier: DedalusSDK::Models::Chat::ChatCompletionChunk::service_tier?
+
+        attr_reader system_fingerprint: String?
+
+        def system_fingerprint=: (String) -> String
+
+        attr_accessor usage: DedalusSDK::Chat::CompletionUsage?
+
+        def initialize: (
+          id: String,
+          choices: ::Array[DedalusSDK::Chat::StreamChoice],
+          created: Integer,
+          model: String,
+          ?service_tier: DedalusSDK::Models::Chat::ChatCompletionChunk::service_tier?,
+          ?system_fingerprint: String,
+          ?usage: DedalusSDK::Chat::CompletionUsage?,
+          ?object: :"chat.completion.chunk"
+        ) -> void
+
+        def to_hash: -> {
+          id: String,
+          choices: ::Array[DedalusSDK::Chat::StreamChoice],
+          created: Integer,
+          model: String,
+          object: :"chat.completion.chunk",
+          service_tier: DedalusSDK::Models::Chat::ChatCompletionChunk::service_tier?,
+          system_fingerprint: String,
+          usage: DedalusSDK::Chat::CompletionUsage?
+        }
+
+        type service_tier = :auto | :default | :flex | :scale | :priority
+
+        module ServiceTier
+          extend DedalusSDK::Internal::Type::Enum
+
+          AUTO: :auto
+          DEFAULT: :default
+          FLEX: :flex
+          SCALE: :scale
+          PRIORITY: :priority
+
+          def self?.values: -> ::Array[DedalusSDK::Models::Chat::ChatCompletionChunk::service_tier]
+        end
+      end
+    end
+  end
+end
